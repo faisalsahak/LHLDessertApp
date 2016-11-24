@@ -10,24 +10,23 @@ app.set("view engine", "ejs");
 
 
 app.get("/", (req, res) => {
-  res.render("");
+  res.render("index");
 });
 
 app.get("/confirm-order", (req, res) => {
   console.log("confirm-order!");
-}
 
-  res.render('render Confirmation ejs page') {
+  res.render('render Confirmation ejs page')
 
-})
+});
 
 
 app.get('/menus', (req, res)=> {
-  res.render('menu.ejs')
+  res.render('menu')
 })
 
 app.get("/current-orders", (req, res) => {
-  res.render("current_orders.ejs" ??);
+  res.render("");
 });
 
 
@@ -42,7 +41,7 @@ app.post("/sendOrder", (req, res) => {
 
 
   res.redirect("")
-}
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);
