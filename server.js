@@ -45,7 +45,7 @@ app.get("/current-orders", (req, res) => {
 });
 
 
-app.get("/sendOrder", (req, res) => {
+app.post("/sendOrder", (req, res) => {
   client.sendMessage({
         to: '+17787923077',
         from: '+16042394685',
@@ -57,7 +57,7 @@ app.get("/sendOrder", (req, res) => {
 res.send('hello');
     });
 
-});
+
 
 
 app.listen(PORT, () => {
