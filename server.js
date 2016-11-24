@@ -21,9 +21,11 @@ app.get("/confirm-order", (req, res) => {
 });
 
 
-app.get('/menus', (req, res)=> {
-  res.render('menu')
-})
+app.get("/menu", (req, res) => {
+  console.log("Testing button");
+
+  res.render('menu');
+});
 
 app.get("/current-orders", (req, res) => {
   res.render("");
