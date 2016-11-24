@@ -1,0 +1,25 @@
+{
+  "name": "lhl-midterm-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atom888/lhl-midterm-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atom888/lhl-midterm-project/issues"
+  },
+  "homepage": "https://github.com/atom888/lhl-midterm-project#readme",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "knex": "^0.12.6"
+  }
+}
