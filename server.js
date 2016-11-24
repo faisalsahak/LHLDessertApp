@@ -20,24 +20,26 @@ app.set("view engine", "ejs");
 const client = require('twilio')('ACdb7f78ac4f8d7daf206ea336c1dde288','205f30c8b12a4c0f4da4b5b5f2a2cf3a');
 
 app.get("/", (req, res) => {
-  res.render("");
+  res.render("index");
 });
 
 app.get("/confirm-order", (req, res) => {
   console.log("confirm-order!");
 
-
   res.render('render Confirmation ejs page')
 
-})
+});
 
 
 app.get('/menus', (req, res)=> {
-  res.render('menu.ejs')
+  res.render('menu')
 })
 
 app.get("/current-orders", (req, res) => {
   res.render("current_orders.ejs");
+
+  res.render("");
+
 });
 
 
@@ -52,6 +54,8 @@ app.get("/sendOrder", (req, res) => {
       });
 res.send('hello');
     });
+
+});
 
 
 app.listen(PORT, () => {
