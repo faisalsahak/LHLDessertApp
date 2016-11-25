@@ -17,6 +17,9 @@ const knex = require("knex")
 
 console.log(settings.database);
 
+
+
+
 knex.select('*')
 .from('menu_items')
 .asCallback(function(err, result) {
@@ -34,3 +37,8 @@ knex.insert('')
   }
   console.log('done');
 })
+
+function insertOrder(knex, data) {
+  console.log(data);
+  knex.insert({'order_id': data.id }).into('order_dessert_item')
+}

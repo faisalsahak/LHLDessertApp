@@ -2,12 +2,18 @@ const express = require("express");
 const PORT = process.env.PORT || 8080;
 const app = express();
 const bodyParser    = require("body-parser");
+const confirmOrders = require("./routes/confirm-orders");
+const renderOrder   = require("./routes/render-orders");
 // Middleware //
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.set("view engine", "ejs");
+
+const orders = [];
+
+
 // Routes //
 
 
@@ -24,9 +30,20 @@ app.get("/", (req, res) => {
 });
 
 app.get("/confirm-order", (req, res) => {
+  const order = { order_id: 2};
+  renderOrder.insert(order);
   console.log("confirm-order!");
 
-  res.render('render Confirmation ejs page')
+  // renderOrder.lookup(knex, (orderInfo) => {
+  //   renderOrder.render(orderInfo, (renderedInfo) => {
+  //     renderOrder.delete(knex, (status) => {
+  //       console.log(status);
+  //       res.render("");
+  //     })
+  //   });
+  // });
+
+  //res.render('render Confirmation ejs page')
 
 });
 
@@ -37,15 +54,22 @@ app.get("/menu", (req, res) => {
   res.render('menu');
 });
 
-app.get("/current-orders", (req, res) => {
-  res.render("current_orders.ejs");
-
-  res.render("");
-
-});
+//info from the cart to be sent to this route
+// app.post('/orders', function (req, res) {
+//     // retrieve user posted data from the body
+//     const order = req.body
+//     orders.push({
+//
+//       cart: order.items;
+//     })
+//     res.send('successfully sent')
+// })
 
 
 app.post("/sendOrder", (req, res) => {
+
+
+
   client.sendMessage({
         to: '+17787923077',
         from: '+16042394685',
