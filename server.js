@@ -4,7 +4,11 @@ const app = express();
 const bodyParser    = require("body-parser");
 const confirmOrders = require("./routes/confirm-orders");
 const renderOrder   = require("./routes/render-orders");
+<<<<<<< HEAD
 // const jsFile = require('./public/scripts/app.js');
+=======
+// const jsFile        = require('./public/scripts/app');
+>>>>>>> 2e443b294669ccc2a324b7bee3ec0395741a2a5e
 // Middleware //
 app.use(express.static("public"));
 
@@ -92,8 +96,8 @@ app.get("/menu", (req, res) => {
 
 
 app.post("/sendOrder", (req, res) => {
-
-    let orderId = req.json[cart];
+console.log("reeeeeeeq", req.body);
+    let orderId = req.body;
     console.log("order iddddddd", orderId);
 
     let order = { order_id: orderId};

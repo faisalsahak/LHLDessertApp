@@ -28,12 +28,17 @@ $(document).ready(function() {
       url: "/sendOrder",
       data: JSON.stringify(cart),
       dataType: 'json',
+
       success: function(i) {
         //Jquery modal
-
+  console.log("jsooooon", JSON.stringify(cart))
       }
     })
+<<<<<<< HEAD
     console.log("ajax", ajax);
+=======
+
+>>>>>>> 2e443b294669ccc2a324b7bee3ec0395741a2a5e
   })
 
 
@@ -66,5 +71,3 @@ $(document).ready(function() {
     });
   });
 });
-
-
