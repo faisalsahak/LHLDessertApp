@@ -60,8 +60,6 @@ $(document).ready(function() {
 
 
   $('.place-order').on("click", function () {
-     orderNumber++;
-     console.log("order number", orderNumber);
     $.ajax({
       method: "post",
       url: "/sendOrder",
