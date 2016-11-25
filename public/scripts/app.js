@@ -31,7 +31,7 @@ $(document).ready(function() {
 
       success: function(i) {
         //Jquery modal
-  console.log("jsooooon", JSON.stringify(cart))
+
       }
     })
 
