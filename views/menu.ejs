@@ -1,0 +1,66 @@
+<% include ./partials/_head %>
+
+<body>
+
+<% include ./partials/_header %>
+
+<section>
+  <container>
+  <h1>Menu</h1>
+  </container>
+</section>
+
+<section>
+  <container>
+    <div class="row">
+      <div class="col s2"></div>
+      <div class="col s6">
+        <div class="food-item food-item-1" data-food-item-id="1">
+          <h3 class="title">Food Item 1</h3>
+          <p class="description">Food description. Food description. Food description. Food description. Food description.</p>
+
+          <div class="row">
+            <a class="add-quantity waves-effect waves-light btn">+</a>
+            <span class="counter">0</span>
+            <a class="subtract-quantity waves-effect waves-light btn">-</a>
+            <button class="btn waves-effect waves-light add-to-cart" type="submit" name="action">Add to Cart
+              <i class="material-icons right">send</i>
+            </button>
+           </div>
+        </div>
+        <div>Food Item 2</div>
+        <div>Food Item 3</div>
+      </div>
+
+      <div class="col s4 cart">
+        <h2>Cart</h2>
+        <section class="cart-items">
+
+
+
+
+          </div>
+
+            <p>Twilio Button Test</p>
+        <form action="/sendOrder" method="Post">
+          <button style="display:none" class="btn waves-effect waves-light place-order" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+          </button>
+        </form>
+
+
+        </section>
+
+      </div>
+    </div>
+  </container>
+</section>
+
+
+
+
+
+<% include ./partials/_footer %>
+
+</body>
+</html>
