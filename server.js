@@ -38,7 +38,7 @@ app.get('/dummyPage', (req, res) => {
 });
 
 app.post('/dummyPage', (req, res) =>{
-  let orderId = req.body.text;
+  let orderId = req.body;
   console.log("order iddddddd", orderId);
 
   let order = { order_id: orderId};
@@ -98,7 +98,6 @@ app.post("/sendOrder", (req, res) => {
     let order = { order_id: orderId};
 
     renderOrder.insert(order);
-
     console.log("confirm-order!");
 
 
