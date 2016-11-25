@@ -4,6 +4,7 @@ const app = express();
 const bodyParser    = require("body-parser");
 const confirmOrders = require("./routes/confirm-orders");
 const renderOrder   = require("./routes/render-orders");
+// const jsFile = require('./public/scripts/app.js');
 // Middleware //
 app.use(express.static("public"));
 
