@@ -28,11 +28,13 @@ $(document).ready(function() {
       url: "/sendOrder",
       data: JSON.stringify(cart),
       dataType: 'json',
+
       success: function(i) {
         //Jquery modal
-
+  console.log("jsooooon", JSON.stringify(cart))
       }
     })
+
   })
 
 
@@ -65,5 +67,3 @@ $(document).ready(function() {
     });
   });
 });
-
-
