@@ -4,6 +4,10 @@ const app = express();
 const bodyParser    = require("body-parser");
 const confirmOrders = require("./routes/confirm-orders");
 const renderOrder   = require("./routes/render-orders");
+
+
+// const jsFile = require('./public/scripts/app.js');
+
 // const jsFile        = require('./public/scripts/app');
 
 // Middleware //
@@ -34,23 +38,23 @@ app.get("/", (req, res) => {
 
 
 
-app.get('/dummyPage', (req, res) => {
-
-  res.render("mytemp");
-});
-
-app.post('/dummyPage', (req, res) =>{
-  let orderId = req.body.text;
-  console.log("order iddddddd", orderId);
-
-  let order = { order_id: orderId};
-
-  renderOrder.insert(order);
-
-
-  console.log("confirm-order!");
-
-});
+// app.get('/dummyPage', (req, res) => {
+//
+//   res.render("mytemp");
+// });
+//
+// app.post('/dummyPage', (req, res) =>{
+//   let orderId = req.body;
+//   console.log("order iddddddd", orderId);
+//
+//   let order = { order_id: orderId};
+//
+//   renderOrder.insert(order);
+//
+//
+//   console.log("confirm-order!");
+//
+// });
 
 
 
@@ -93,13 +97,18 @@ app.get("/menu", (req, res) => {
 
 
 app.post("/sendOrder", (req, res) => {
-console.log("reeeeeeeq", req.body);
+console.log("reeeeeeeq", typeof req.body);
     let orderId = req.body;
-    console.log("order iddddddd", orderId);
 
-    let order = { order_id: orderId};
+  Object.keys(orderId).forEach(function(orderNum){
+     let orderid1 = orderNum.order_id;
 
-    renderOrder.insert(order);
+     let order = { order_id: orderid1};
+     console.log("tyyyyyyyyyyyyppppppppppeeeeeeeeee", typeof orderid1);
+
+     renderOrder.insert(order);
+  });
+
 
     console.log("confirm-order!");
 
