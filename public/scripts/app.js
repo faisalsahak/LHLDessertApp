@@ -1,7 +1,7 @@
 // App //
-var cart = [];
-
 $(document).ready(function() {
+
+  var cart = [];
 // have cart hidden when the user first enters the menu pages
 //Once the user has selected an item the cart will appear
 // $(".cart").hide();
@@ -34,7 +34,11 @@ $(document).ready(function() {
 
       }
     })
+<<<<<<< HEAD
+    console.log("ajax", ajax);
+=======
 
+>>>>>>> 2e443b294669ccc2a324b7bee3ec0395741a2a5e
   })
 
 
