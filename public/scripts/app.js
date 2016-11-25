@@ -43,11 +43,7 @@ $(document).ready(function() {
     // var new_cart_item = $('.cart-item.hidden').clone().removeClass('hidden').show().appendTo('.cart-items');
 
     // $(new_cart_item).find('.title').text(foodName);
-
-    //cart.push({order_id: foodItemId, foodName: foodName});
-
-    cart.push({order_id: foodItemId, foodName: foodName, foodQuantity: foodQuantity});
-
+    cart.push({foodItemId: foodItemId, foodName: foodName, foodQuantity: foodQuantity});
 
     console.log("cart order", cart);
 
@@ -64,6 +60,8 @@ $(document).ready(function() {
 
 
   $('.place-order').on("click", function () {
+     orderNumber++;
+     console.log("order number", orderNumber);
     $.ajax({
       method: "post",
       url: "/sendOrder",
@@ -72,15 +70,6 @@ $(document).ready(function() {
 
       success: function(i) {
         //Jquery modal
-
-      }
-    })
-
-    console.log("ajax", ajax);
-
-
-  })
-
       console.log("jsooooon", JSON.stringify(cart))
       }
     })
