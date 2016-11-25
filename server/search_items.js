@@ -40,5 +40,5 @@ knex.insert('')
 
 function insertOrder(knex, data) {
   console.log(data);
-  knex.insert({'order_id': data.id }).into('order_dessert_item')
+  knex.insert({ 'order_id': data.id}, {'order_id': data.id}).into('order_dessert_item')
 }

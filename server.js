@@ -29,10 +29,34 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/confirm-order", (req, res) => {
-  const order = { order_id: 2};
+
+
+
+app.get('/dummyPage', (req, res) => {
+
+  res.render("mytemp");
+});
+
+app.post('/dummyPage', (req, res) =>{
+  let orderId = req.body.text;
+  console.log("order iddddddd", orderId);
+
+  let order = { order_id: orderId};
+
   renderOrder.insert(order);
+
+
   console.log("confirm-order!");
+
+});
+
+
+
+
+app.get("/confirm-order", (req, res) => {
+  // const order = { order_id: 2};
+  // renderOrder.insert(order);
+  // console.log("confirm-order!");
 
   // renderOrder.lookup(knex, (orderInfo) => {
   //   renderOrder.render(orderInfo, (renderedInfo) => {
@@ -67,6 +91,16 @@ app.get("/menu", (req, res) => {
 
 
 app.post("/sendOrder", (req, res) => {
+
+    let orderId = req.json[cart];
+    console.log("order iddddddd", orderId);
+
+    let order = { order_id: orderId};
+
+    renderOrder.insert(order);
+
+    console.log("confirm-order!");
+
 
 
 
