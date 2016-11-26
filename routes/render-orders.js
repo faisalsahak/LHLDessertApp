@@ -18,11 +18,17 @@ module.exports = {
 
   lookup: (cb) => {
     var results = [];
-    console.log("into knexxxx");
-    knex.select('id', 'order_id', 'dessert_item_id', 'quantity')
+    // 93
+    knex('order_dessert_item').max('order_id')
+    .then(function(rows) {
+      var maxOrderId = rows[0].max;
+      // console.log(maxOrderId);
+        knex.select('id', 'order_id', 'dessert_item_id', 'quantity')
     .from('order_dessert_item')
+    // .max('order_id')
     .orderBy('order_id', 'desc')
-    // .limit(1) //made changes, was 4
+    .where('order_id',  maxOrderId)
+    // .limit(10) //.offset()
     .then(function(rows){
       var orders = {};
       // console.log(rows);
@@ -41,23 +47,25 @@ module.exports = {
     .catch(function(err){
       cb(err);
     });
+    });
+
   },
 
-  render: (data, cb) => {
-      let rendered = data.map(function (obj){
-        let type = obj.type;
-        let order = `${type}`;
-        return order;
-  });
-    cb(rendered);
-  },
+  // render: (data, cb) => {
+  //     let rendered = data.map(function (obj){
+  //       let type = obj.type;
+  //       let order = `${type}`;
+  //       return order;
+  // });
+  //   cb(rendered);
+  // },
 
-  delete: (cb) => {
-    knex.del().from("dessert_items").then(cb("Success"));
+  delete: (knex, cb) => {
+    knex.del('order_id').from("order_dessert_items").where('order_id').then(cb("item DELETED"));
   },
 
   insert: (data, cb) =>{
-    console.log("dataaaaaaaaaaaa",data);
+    console.log("Data being insterted into the DB: ",data);
     knex.insert({})
     .into('order_table')
     .returning('id')

@@ -19,7 +19,9 @@ $(document).ready(function() {
 
   $('.subtract-quantity').on('click', function () {
     $('.counter').html(function(i, value) {
-      return value * 1 - 1
+      if (value > 0) {
+      return value * 1 - 1;
+      }
     });
   });
 
@@ -66,7 +68,6 @@ $(document).ready(function() {
   $('.place-order').on("click", function (event) {
     event.preventDefault();
 
-    // orderNumber++;
      console.log("order number", orderNumber);
     $.ajax({
       method: "POST",
@@ -74,11 +75,10 @@ $(document).ready(function() {
       data: { order: JSON.stringify(cart) },
       //dataType: 'json',
       success: function(data) {
-        //Jquery modal
-        console.log("jsooooon", JSON.stringify(cart))
+        console.log("Success!", JSON.stringify(cart))
       },
       error: function(data){
-        console.log(data);  // please, why is Jeremy so lazy, why why why?
+        alert("Something went wrong!");
       }
     })
 
@@ -96,15 +96,5 @@ $(document).ready(function() {
     });
     if(cart.length >= 1) $('.place-order').show();
   };
-
-
-
-  // if counter is at 0 prevent subtract quantity action
-
-
-
-
-
-
 
 });

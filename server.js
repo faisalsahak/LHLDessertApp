@@ -30,6 +30,8 @@ const orders = [];
 //var myclient = new twilio.RestClient(accountSid, authToken);
 
 const client = require('twilio')('ACdb7f78ac4f8d7daf206ea336c1dde288','205f30c8b12a4c0f4da4b5b5f2a2cf3a');
+const cheff = require('twilio')('accountsid','authToken');
+
 
 app.get("/", (req, res) => {
   res.render("index");
@@ -59,13 +61,27 @@ app.get("/", (req, res) => {
 
 
 
-app.get("/confirm-order", (req, res) => {
+app.post("/confirm-order", (req, res) => {
+
+  cheff.sendMessage({
+    to: 'client',
+    from: '+twilio',
+    body: 'order will be ready in 15 minutes'
+  }, function(err, data){
+    if (err) {
+      console.log(err);
+      res.status(500).send("TWILIO IS FUCKED");
+    } else {
+      // console.log(data)
+      res.send();
+    }
+  });
 
 });
 
 
 app.get("/menu", (req, res) => {  // for users to see what orders they can place
-  console.log("Testing button");
+  console.log("Menu get is working");
 
   res.render('menu');
 });
@@ -85,7 +101,7 @@ app.get("/menu", (req, res) => {  // for users to see what orders they can place
 app.post("/sendOrder", (req, res) => {
 
   let myOrder = JSON.parse(req.body.order);
-  console.log("myOrder:", myOrder);
+  console.log("SendOrder Post is working. Here is myOrder:", myOrder);
 
   let testOrder = req.body;
 
@@ -128,6 +144,12 @@ app.get("/restaurant", (req, res) => {
   })
 
 });
+
+app.post('/delete', (req, res) => {
+  console.log('reeeeeeeeq', req.body.button)
+  let id = req.body;
+  console.log('iddddddddd', id);
+})
 
 
 
