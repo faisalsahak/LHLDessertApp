@@ -33,9 +33,12 @@ $(document).ready(function() {
 //When the food item one button is clicked the cart will appear
   $('.add-to-cart').on("click", function(element) {
 
+
+
     var foodItemId = $(this).closest(".food-item").data("food-item-id");
     var foodName = $(this).closest(".description").find(".title").text();
     var foodQuantity = $(this).closest(".food-item").find(".counter").text();
+
 
     console.log("foodItemID", foodItemId)
     console.log("foodname", foodName)
@@ -43,6 +46,7 @@ $(document).ready(function() {
     // var new_cart_item = $('.cart-item.hidden').clone().removeClass('hidden').show().appendTo('.cart-items');
 
     // $(new_cart_item).find('.title').text(foodName);
+
     cart.push({dessert_item_id: foodItemId, foodName: foodName, foodQuantity: foodQuantity});
 
     console.log("cart order", cart);
@@ -69,9 +73,12 @@ $(document).ready(function() {
       url: "/sendOrder",
       data: { order: JSON.stringify(cart) },
       //dataType: 'json',
-      success: function(i) {
+      success: function(data) {
         //Jquery modal
-      console.log("jsooooon", JSON.stringify(cart))
+        console.log("jsooooon", JSON.stringify(cart))
+      },
+      error: function(data){
+        console.log(data);  // please, why is Jeremy so lazy, why why why?
       }
     })
 

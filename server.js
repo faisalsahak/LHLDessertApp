@@ -64,7 +64,7 @@ app.get("/confirm-order", (req, res) => {
 });
 
 
-app.get("/menu", (req, res) => {
+app.get("/menu", (req, res) => {  // for users to see what orders they can place
   console.log("Testing button");
 
   res.render('menu');
@@ -83,22 +83,52 @@ app.get("/menu", (req, res) => {
 
 
 app.post("/sendOrder", (req, res) => {
-  console.log(req.body);
+
   let myOrder = JSON.parse(req.body.order);
+  console.log("myOrder:", myOrder);
+
+  let testOrder = req.body;
+
+  // console.log("TESETESSESTS", testOrder);
+  // var templateVars = {
+
+  //   myOrder: myOrder
+  // }
+
 
   renderOrder.insert(myOrder, function(error, result) {
-    // heandle error
+    if (error) {
+      res.status(500).send("DB IS FUCKED");
+      return;
+    }
+    // handle error
     client.sendMessage({
-          to: '+17787923077',
-          from: '+16042394685',
-          body: 'hello'
-        }, function(err, data){
-          if (err) console.log(err);
-          console.log(data)
-        });
-    //res.redirect('/menu');
+      to: '+17787923077',
+      from: '+16042394685',
+      body: 'hello'
+    }, function(err, data){
+      if (err) {
+        console.log(err);
+        res.status(500).send("TWILIO IS FUCKED");
+      } else {
+        // console.log(data)
+        res.send();
+      }
+    });
   });
 });
+
+app.get("/restaurant", (req, res) => {
+  renderOrder.lookup((err, data) => {
+    if (err) {
+      res.status(500).send("THE UNIVERSE IS SCARY:" + JSON.stringify(err));
+    } else {
+      res.render("restaurant", {orders: data});
+    }
+  })
+
+});
+
 
 
 
