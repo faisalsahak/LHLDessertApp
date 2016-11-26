@@ -65,11 +65,11 @@ $(document).ready(function() {
     // orderNumber++;
      console.log("order number", orderNumber);
     $.ajax({
-      method: "post",
+      method: "POST",
       url: "/sendOrder",
-      data: { order: cart },
-      dataType: 'json',
-
+      data: JSON.stringify({ 'order': cart }),
+      //dataType: 'json',
+      contentType: "application/json",
       success: function(i) {
         //Jquery modal
       console.log("jsooooon", JSON.stringify(cart))
