@@ -18,10 +18,17 @@ module.exports = {
 
   lookup: (cb) => {
     var results = [];
-    console.log("into knexxxx");
-    knex.select('id', 'order_id', 'dessert_item_id', 'quantity')
+    // 93
+    knex('order_dessert_item').max('order_id')
+    .then(function(rows) {
+      var maxOrderId = rows[0].max;
+      // console.log(maxOrderId);
+        knex.select('id', 'order_id', 'dessert_item_id', 'quantity')
     .from('order_dessert_item')
-    .limit(4)
+    // .max('order_id')
+    .orderBy('order_id', 'desc')
+    .where('order_id',  maxOrderId)
+    // .limit(10) //.offset()
     .then(function(rows){
       var orders = {};
       // console.log(rows);
@@ -39,6 +46,8 @@ module.exports = {
     .catch(function(err){
       cb(err);
     });
+    });
+
   },
 
   render: (data, cb) => {
@@ -55,7 +64,7 @@ module.exports = {
   },
 
   insert: (data, cb) =>{
-    console.log("dataaaaaaaaaaaa",data);
+    console.log("Data being insterted into the DB: ",data);
     knex.insert({})
     .into('order_table')
     .returning('id')
