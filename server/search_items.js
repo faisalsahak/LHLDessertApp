@@ -15,7 +15,7 @@ const knex = require("knex")
   });
 
 
-console.log(settings.database);
+// console.log(settings.database);
 
 
 
@@ -39,7 +39,7 @@ knex.insert('')
 })
 
 function insertOrder(knex, data) {
-  console.log("daaaaaaaaaaataaaaaaa:",data.id);
+  console.log("Insert order into DB:",data.id);
   knex.insert({ 'order_id': data.id}).into('order_dessert_item').asCallback(fucntion(err, result){
     if (err) return console.log(err);
     return console.log(result)

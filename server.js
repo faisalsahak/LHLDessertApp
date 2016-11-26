@@ -81,7 +81,7 @@ app.post("/confirm-order", (req, res) => {
 
 
 app.get("/menu", (req, res) => {  // for users to see what orders they can place
-  console.log("Testing button");
+  console.log("Menu get is working");
 
   res.render('menu');
 });
@@ -101,7 +101,7 @@ app.get("/menu", (req, res) => {  // for users to see what orders they can place
 app.post("/sendOrder", (req, res) => {
 
   let myOrder = JSON.parse(req.body.order);
-  console.log("myOrder:", myOrder);
+  console.log("SendOrder Post is working. Here is myOrder:", myOrder);
 
   let testOrder = req.body;
 
