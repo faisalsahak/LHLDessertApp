@@ -94,7 +94,7 @@ app.get("/menu", (req, res) => {
 
 app.post("/sendOrder", (req, res) => {
 
-  let myOrder = req.body;
+  let myOrder = req.body.order;
   console.log(myOrder)
 
   renderOrder.insert(myOrder, function(error, result) {

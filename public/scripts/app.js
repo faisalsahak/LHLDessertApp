@@ -38,24 +38,24 @@ $(document).ready(function() {
   $('.add-to-cart').on("click", function(element) {
     var dessert_item_id = $(this).closest(".food-item").data("food-item-id");
     var dessertName = $(this).closest(".description").find(".title").text();
-    var quantity = $(this).closest(".food-item").find(".counter").text();
+    var foodQuantity = $(this).closest(".food-item").find(".counter").text();
 
     //  if (quantity === 0) {
     //   element.preventDefault();
     //   return false;
     // }
 
-    console.log("quantity", quantity);
+    console.log("quantity", foodQuantity);
 
 
 
     console.log("foodItemID", dessert_item_id)
     console.log("dessertName", dessertName)
-    console.log("foodQuant", quantity);
+    console.log("foodQuant", foodQuantity);
     // var new_cart_item = $('.cart-item.hidden').clone().removeClass('hidden').show().appendTo('.cart-items');
 
     // $(new_cart_item).find('.title').text(foodName);
-    cart.push({dessert_item_id: dessert_item_id, dessertName: dessertName, quantity: quantity});
+    cart.push({dessert_item_id: dessert_item_id, dessertName: dessertName, quantity: foodQuantity});
 
     console.log("cart order", cart);
     console.log("JSON ffdfdfdfdfdfdf", JSON.stringify(cart));
