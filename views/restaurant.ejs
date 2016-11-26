@@ -1,0 +1,23 @@
+
+<% include ./partials/_header %>
+
+
+
+<% Object.keys(orders).forEach(function(order_id) { %>
+  <% order = orders[order_id]; %>
+  <p>
+    <h4>order_id: <%= order.order_id %></br><h4>
+    items:
+    <% order.items.forEach(function(item) { %>
+      id: <%= item.id %></br>
+      item_name: <%= 'no clue, boss!' %>
+      dessert_item_id: <%= item.recipe_id %></br>
+      description: <%= '' %></br>
+      quantity: <%= item.quantity %></br>
+    <% }); %>
+  </p>
+<% }); %>
+
+
+
+

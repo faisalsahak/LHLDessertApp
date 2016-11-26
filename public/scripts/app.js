@@ -69,9 +69,12 @@ $(document).ready(function() {
       url: "/sendOrder",
       data: { order: JSON.stringify(cart) },
       //dataType: 'json',
-      success: function(i) {
+      success: function(data) {
         //Jquery modal
-      console.log("jsooooon", JSON.stringify(cart))
+        console.log("jsooooon", JSON.stringify(cart))
+      },
+      error: function(data){
+        console.log(data);  // please, why is Jeremy so lazy, why why why?
       }
     })
 
