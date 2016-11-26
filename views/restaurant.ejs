@@ -1,22 +1,39 @@
+<% include ./partials/_head %>
+    <% include ./partials/_header %>
 
-<% include ./partials/_header %>
 
+  <body>
 
+  <% Object.keys(orders).forEach(function(order_id) { %>
+    <% order = orders[order_id]; %>
+    <div class="container row">
+      <div class="order-header col s12">
+        <i class="small material-icons">error</i>Order #<%= order.order_id %> </br>
+      </div>
+    <% order = orders[order_id]; %>
 
-<% Object.keys(orders).forEach(function(order_id) { %>
-  <% order = orders[order_id]; %>
-  <p>
-    <h4>order_id: <%= order.order_id %></br><h4>
     items:
     <% order.items.forEach(function(item) { %>
       id: <%= item.id %></br>
-      item_name: <%= 'no clue, boss!' %>
-      dessert_item_id: <%= item.recipe_id %></br>
+      item_name: <%= 'no clue, boss!' %></br>
+      dessert_item_id(Cakes, Donuts, etc): <%= item.recipe_id %></br>
       description: <%= '' %></br>
       quantity: <%= item.quantity %></br>
+      <a class="waves-effect waves-light btn onclick='' ">Accept</a>
+      <a class="waves-effect waves-light btn onclick='' ">Decline</a>
+      <hr>
+    </div>
     <% }); %>
-  </p>
 <% }); %>
+
+ <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+ <% include ./partials/_footer %>
+
+
+  </body>
+</html>
 
 
 

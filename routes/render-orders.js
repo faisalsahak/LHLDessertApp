@@ -21,7 +21,8 @@ module.exports = {
     console.log("into knexxxx");
     knex.select('id', 'order_id', 'dessert_item_id', 'quantity')
     .from('order_dessert_item')
-    .limit(4)
+    .orderBy('order_id', 'desc')
+    // .limit(1) //made changes, was 4
     .then(function(rows){
       var orders = {};
       // console.log(rows);
@@ -33,6 +34,7 @@ module.exports = {
         var item = {id: row.id, recipe_id: row.dessert_item_id, quantity: row.quantity /*, name: "FOOD"*/ }
         orders[row.order_id].items.push(item)
       })
+
       // console.log(orders);
       cb(null, orders);
     })
