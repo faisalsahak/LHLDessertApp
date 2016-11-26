@@ -41,17 +41,17 @@ module.exports = {
     });
   },
 
-  render: (data, cb) => {
-      let rendered = data.map(function (obj){
-        let type = obj.type;
-        let order = `${type}`;
-        return order;
-  });
-    cb(rendered);
-  },
+  // render: (data, cb) => {
+  //     let rendered = data.map(function (obj){
+  //       let type = obj.type;
+  //       let order = `${type}`;
+  //       return order;
+  // });
+  //   cb(rendered);
+  // },
 
-  delete: (cb) => {
-    knex.del().from("dessert_items").then(cb("Success"));
+  delete: (knex, cb) => {
+    knex.del('order_id').from("order_dessert_items").where('order_id').then(cb("item DELETED"));
   },
 
   insert: (data, cb) =>{
