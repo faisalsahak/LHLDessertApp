@@ -1,0 +1,67 @@
+body {
+  background-color: #eee;
+}
+
+.container-fluid {
+  border: 0px solid red;
+  width: 80%;
+  padding: 10px;
+
+}
+
+.header-title {
+  border: 0px solid red;
+  margin-top: 20px;
+}
+
+.order-box {
+  border: 4px solid black;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 10px 30px 10px 30px;
+}
+
+.order-header {
+  border: 0px solid red;
+}
+
+.order-info-box {
+  border: 1px solid black;
+
+}
+
+.order-info {
+ border: 0px solid red;
+ text-align: left;
+ height: auto;
+ padding: 3px;
+ font-size: 18px;
+}
+
+.order-info-data {
+ border: 0px solid red;
+ text-align: left;
+ height: auto;
+ padding: 3px;
+ font-size: 16px;
+}
+
+.status {
+  border: 0px solid red;
+  margin: 0 auto;
+  height: auto;
+}
+
+.btn-group {
+  border: 0px solid red;
+  padding: 5px;
+
+}
+
+.btn-spacing {
+  margin-right: 5px;
+}
+
+
+
