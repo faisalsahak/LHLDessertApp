@@ -17,11 +17,17 @@ $(document).ready(function() {
     });
   });
 
-  $('.subtract-quantity').on('click', function () {
+  $('.subtract-quantity').on('click', function (event) {
     $('.counter').html(function(i, value) {
+      if (value === 0) {
+        $('.subtract-quantity').attr("disabled", "disabled");
+      }
+      console.log("value", value);
       return value * 1 - 1
     });
   });
+
+
 
 
 
@@ -33,19 +39,20 @@ $(document).ready(function() {
 //When the food item one button is clicked the cart will appear
   $('.add-to-cart').on("click", function(element) {
 
-    var foodItemId = $(this).closest(".food-item").data("food-item-id");
+    var dessert_item_id = $(this).closest(".food-item").data("food-item-id");
     var foodName = $(this).closest(".description").find(".title").text();
-    var foodQuantity = $(this).closest(".food-item").find(".counter").text();
+    var quantity = $(this).closest(".food-item").find(".counter").text();
 
-    console.log("foodItemID", foodItemId)
+    console.log("foodItemID", dessert_item_id)
     console.log("foodname", foodName)
-    console.log("foodQuant", foodQuantity);
+    console.log("foodQuant", quantity);
     // var new_cart_item = $('.cart-item.hidden').clone().removeClass('hidden').show().appendTo('.cart-items');
 
     // $(new_cart_item).find('.title').text(foodName);
-    cart.push({foodItemId: foodItemId, foodName: foodName, foodQuantity: foodQuantity});
+    cart.push({dessert_item_id: dessert_item_id, foodName: foodName, quantity: quantity});
 
     console.log("cart order", cart);
+    console.log("JSON ffdfdfdfdfdfdf", JSON.stringify(cart));
 
     //Working
     // cart.push({foodItemId: foodItemId, foodName: foodName});
@@ -59,20 +66,25 @@ $(document).ready(function() {
 
 
 
-  $('.place-order').on("click", function () {
-     orderNumber++;
-     console.log("order number", orderNumber);
+  $('.place-order').on("click", function (event) {
+    event.preventDefault();
+    console.log("cart in place order", cart);
     $.ajax({
       method: "post",
       url: "/sendOrder",
       data: JSON.stringify(cart),
-      dataType: 'json',
+      // dataType: 'json',
+      success: function(data) {
+        return data;
 
-      success: function(i) {
-        //Jquery modal
-      console.log("jsooooon", JSON.stringify(cart))
+      console.log("data?", data);
+      },
+      error: function() {
+        alert("Error has occurred AJAX")
+        console.log("Error ERROR");
+        console.log("CARTTTTT", cart);
       }
-    })
+    });
 
   });
 
@@ -82,7 +94,7 @@ $(document).ready(function() {
     $(cart).each(function(k, cartItem) {
 
       $('.cart-items').append(
-      "<div  class=\"cart-item hidden\"><h5 class=\"title\">" + cartItem.foodName + "</h5><div class=\"quantity\"><span class=\"label\">x</span><span class=\"quantity number\">" + cartItem.foodQuantity + "</span></div>"
+      "<div  class=\"cart-item hidden\"><h5 class=\"title\">" + cartItem.foodName + "</h5><div class=\"quantity\"><span class=\"label\">x</span><span class=\"quantity number\">" + cartItem.quantity + "</span></div>"
 
       );
     });

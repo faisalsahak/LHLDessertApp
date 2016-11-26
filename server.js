@@ -96,8 +96,17 @@ app.get("/menu", (req, res) => {
 // })
 
 
+// GET '/orders'
+
+// GET '/orders/new'
+// POST '/orders'
+
+// GET '/orders/:id'
+// PUT '/orders/:id'
+
+
 app.post("/sendOrder", (req, res) => {
-console.log("reeeeeeeq", typeof req.body);
+console.log("reeeeeeeq", req.body);
     let orderId = req.body;
 
   Object.keys(orderId).forEach(function(orderNum){
