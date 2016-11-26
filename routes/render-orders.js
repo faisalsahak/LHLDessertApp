@@ -38,15 +38,27 @@ module.exports = {
 },
 
 delete: (cb) => {
-    knex.del().from("dessert_items").then(cb("Success"));
-  },
+  knex.del().from("dessert_items").then(cb("Success"));
+},
 
-  insert: (data) =>{
-    console.log(data);
-    knex.insert({'order_id': data.order_id }).into('order_dessert_item').asCallback(function (err, result){
-      if (err) return console.log(err);
-      console.log(result)
-    })
-  }
+insert: (data, cb) =>{
+  console.log(data);
+  knex.insert({}).into('order_table').returning('id').asCallback(function(error, result) {
+    let count = 0;
+    data.forEach(function(menuItem) {
+      knex.insert({
+        'order_id': parseInt(result[0]),
+        'dessert_item_id': menuItem.dessert_item_id,
+        'quantity': menuItem.foodQuantity })
+      .into('order_dessert_item')
+      .asCallback(function(error, result) {
+        count += 1;
+        if(count === data.length) {
+          cb(error, result);
+        }
+      });
+    });
+  });
+}
 
 }

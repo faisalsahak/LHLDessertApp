@@ -83,6 +83,7 @@ $(document).ready(function() {
         alert("Error has occurred AJAX")
         console.log("Error ERROR");
         console.log("CARTTTTT", cart);
+
       }
     });
 
