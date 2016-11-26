@@ -83,7 +83,7 @@ app.get("/menu", (req, res) => {
 
 
 app.post("/sendOrder", (req, res) => {
-  console.log(req.body);
+  console.log("JSON file on server side", req.body);
   let myOrder = JSON.parse(req.body.order);
 
   console.log("myorderrrrrrr" + myOrder);
