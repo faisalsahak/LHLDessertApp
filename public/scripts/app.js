@@ -43,7 +43,7 @@ $(document).ready(function() {
     // var new_cart_item = $('.cart-item.hidden').clone().removeClass('hidden').show().appendTo('.cart-items');
 
     // $(new_cart_item).find('.title').text(foodName);
-    cart.push({foodItemId: foodItemId, foodName: foodName, foodQuantity: foodQuantity});
+    cart.push({dessert_item_id: foodItemId, foodName: foodName, foodQuantity: foodQuantity});
 
     console.log("cart order", cart);
 
@@ -59,13 +59,15 @@ $(document).ready(function() {
 
 
 
-  $('.place-order').on("click", function () {
-     orderNumber++;
+  $('.place-order').on("click", function (event) {
+    event.preventDefault();
+
+    // orderNumber++;
      console.log("order number", orderNumber);
     $.ajax({
       method: "post",
       url: "/sendOrder",
-      data: JSON.stringify(cart),
+      data: { order: cart },
       dataType: 'json',
 
       success: function(i) {
