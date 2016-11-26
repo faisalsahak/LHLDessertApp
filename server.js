@@ -83,7 +83,6 @@ app.get("/menu", (req, res) => {  // for users to see what orders they can place
 
 
 app.post("/sendOrder", (req, res) => {
-  // console.log(req.body);
 
   let myOrder = JSON.parse(req.body.order);
   console.log("myOrder:", myOrder);
@@ -96,7 +95,7 @@ app.post("/sendOrder", (req, res) => {
   //   myOrder: myOrder
   // }
 
-  // console.log("myorderrrrrrr" + myOrder);
+
   renderOrder.insert(myOrder, function(error, result) {
     if (error) {
       res.status(500).send("DB IS FUCKED");
