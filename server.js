@@ -86,7 +86,6 @@ app.post("/sendOrder", (req, res) => {
   console.log(req.body);
   let myOrder = JSON.parse(req.body.order);
 
-  console.log("myorderrrrrrr" + myOrder);
   renderOrder.insert(myOrder, function(error, result) {
     // heandle error
     client.sendMessage({
