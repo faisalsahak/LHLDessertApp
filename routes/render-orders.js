@@ -42,7 +42,7 @@ delete: (cb) => {
 },
 
 insert: (data, cb) =>{
-  console.log(data);
+  console.log("dataaaaaaaaaaaa",data);
   knex.insert({}).into('order_table').returning('id').asCallback(function(error, result) {
     let count = 0;
     data.forEach(function(menuItem) {

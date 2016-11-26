@@ -14,7 +14,6 @@ const renderOrder   = require("./routes/render-orders");
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 app.set("view engine", "ejs");
 
@@ -83,33 +82,24 @@ app.get("/menu", (req, res) => {
 // })
 
 
-// GET '/orders'
-
-// GET '/orders/new'
-// POST '/orders'
-
-// GET '/orders/:id'
-// PUT '/orders/:id'
-
-
 app.post("/sendOrder", (req, res) => {
+  console.log(req.body);
+  let myOrder = JSON.parse(req.body.order);
 
-  let myOrder = req.body.order;
-  console.log(myOrder)
+  console.log("myorderrrrrrr" + myOrder);
 
   renderOrder.insert(myOrder, function(error, result) {
-  //   // heandle error
+    // heandle error
     client.sendMessage({
           to: '+17787923077',
           from: '+16042394685',
           body: 'hello'
         }, function(err, data){
-          if (err) console.error(err);
-          // console.log(data)
+          if (err) console.log(err);
+          console.log(data)
         });
-   // res.redirect('/menu');
+    //res.redirect('/menu');
   });
-  res.send('aok')
 });
 
 
