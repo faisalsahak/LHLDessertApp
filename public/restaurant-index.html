@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Restaurant Ticketing System</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+  <div class="container-fluid">
+    <div class = "header-title col-md-12 row">
+      <h1>RESTAURANT ORDERS <span class="glyphicon glyphicon-cutlery"></span></h1>
+    </div>
+	  <div class="row">
+
+     <div class="order-box col-md-12">
+	     <div class="row">
+			   <div class="order-header col-md-10">
+					<h3>ORDER #002 <!-- order id--></h3>
+				 </div>
+				 <div class="status col-md-2">
+          <button type="" class="btn btn-danger pull-right">
+						<span class=" glyphicon glyphicon-exclamation-sign"></span> New Order! <!-- Alert -->
+					</button>
+				 </div>
+			 </div>
+			 <div class="order-info-box row">
+				<div class="order-info col-md-3">
+				  ITEM
+				</div>
+				<div class="order-info col-md-3">
+          DESCRIPTION
+				</div>
+				<div class="order-info col-md-3">
+          QUANTITY
+				</div>
+				<div class="order-info col-md-3">
+          TIME
+				</div>
+			</div>
+      <div class="order-info-data row">
+        <div id = "order-item" class="order-info col-md-3">
+          Fish <!-- order menu item  -->
+        </div>
+        <div id = "order-description" class="order-info col-md-3">
+          No bones <!-- order special instructions -->
+        </div>
+        <div id = "order-quantity" class="order-info col-md-3">
+          1 <!-- order menu quantity -->
+        </div>
+        <div id = "order-time" class="order-info col-md-3">
+          18:00 <!-- order menu date -->
+        </div>
+      </div>
+			<div class="btn-group col-md-12">
+				<button class="btn btn-default">
+				  <span class="glyphicon glyphicon-time"></span> EST. TIME
+				</button>
+				<button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-spacing">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#"> 10 mins</a>
+					</li>
+					<li>
+            <a href="#"> 20 mins</a>
+          </li>
+          <li>
+            <a href="#"> 30 mins</a>
+          </li>
+          <li>
+            <a href="#"> 40 mins</a>
+          </li>
+				</ul>
+        <button type="button" class="btn btn-danger pull-right">
+          <span class="glyphicon glyphicon-remove-sign"></span> DECLINE
+        </button>
+        <button type="button" class="btn btn-success btn-spacing pull-right">
+          <span class="glyphicon glyphicon-ok-sign"></span> ACCEPT
+        </button>
+      </div>
+    </div>
+	 </div>
+
+  <div class="order-box col-md-12">
+       <div class="row">
+         <div class="order-header col-md-10">
+          <h3>ORDER #001 <!-- order id--></h3>
+         </div>
+         <div class="status col-md-2">
+          <button type="" class="btn btn-success pull-right">
+            <span class="glyphicon glyphicon-ok-sign"></span> Accepted! <!-- Alert -->
+          </button>
+         </div>
+       </div>
+       <div class="order-info-box row">
+        <div class="order-info col-md-3">
+          ITEM
+        </div>
+        <div class="order-info col-md-3">
+          DESCRIPTION
+        </div>
+        <div class="order-info col-md-3">
+          QUANTITY
+        </div>
+        <div class="order-info col-md-3">
+          TIME
+        </div>
+      </div>
+      <div class="order-info-data row">
+        <div id = "order-item" class="order-info col-md-3">
+          Steak <!-- order menu item  -->
+        </div>
+        <div id = "order-description" class="order-info col-md-3">
+          Well done <!-- order special instructions -->
+        </div>
+        <div id = "order-quantity" class="order-info col-md-3">
+          1 <!-- order menu quantity -->
+        </div>
+        <div id = "order-time" class="order-info col-md-3">
+          17:50 <!-- order menu date -->
+        </div>
+      </div>
+      <div class="btn-group col-md-12">
+        <button class="btn btn-default">
+          <span class="glyphicon glyphicon-time"></span> 20 mins
+        </button>
+        <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-spacing disabled">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="#"> 10 mins</a>
+          </li>
+          <li>
+            <a href="#"> 20 mins</a>
+          </li>
+          <li>
+            <a href="#"> 30 mins</a>
+          </li>
+          <li>
+            <a href="#"> 40 mins</a>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-danger pull-right disabled">
+          <span class="glyphicon glyphicon-remove-sign"></span> DECLINE
+        </button>
+        <button type="button" class="btn btn-success btn-spacing pull-right disabled">
+          <span class="glyphicon glyphicon-ok-sign"></span> ACCEPT
+        </button>
+      </div>
+    </div>
+   </div>
+  </div>
+
+  </div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

@@ -67,9 +67,8 @@ $(document).ready(function() {
     $.ajax({
       method: "POST",
       url: "/sendOrder",
-      data: JSON.stringify({ 'order': cart }),
+      data: { order: JSON.stringify(cart) },
       //dataType: 'json',
-      contentType: "application/json",
       success: function(i) {
         //Jquery modal
       console.log("jsooooon", JSON.stringify(cart))
