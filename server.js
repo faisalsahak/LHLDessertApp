@@ -83,48 +83,21 @@ app.get("/menu", (req, res) => {
 
 
 app.post("/sendOrder", (req, res) => {
- // console.log("reeeeeeeq", typeof req.body);
- //    let orderId = req.body;
- //
- //   Object.keys(orderId).forEach(function(orderNum){
- //      let orderid1 = orderNum.order_id;
- //
- //      let order = { order_id: orderid1};
- //      console.log("tyyyyyyyyyyyyppppppppppeeeeeeeeee", typeof orderid1);
- //
- //    renderOrder.insert(order);
-   console.log('here ' + req.body.order);
-   let myOrder = JSON.parse(req.body.order);
-   renderOrder.insert(myOrder, function(error, result) {
-     // heandle error
-     client.sendMessage({
-           to: '+17787923077',
-           from: '+16042394685',
-           body: 'hello'
-         }, function(err, data){
-           if (err) console.log(err);
-           console.log(data)
-         });
-     res.redirect('/menu');
-    });
-
-     console.log("confirm-order!");
-
+  console.log('here ' + req.body.order);
+  let myOrder = JSON.parse(req.body.order);
+  renderOrder.insert(myOrder, function(error, result) {
+    // heandle error
+    client.sendMessage({
+          to: '+17787923077',
+          from: '+16042394685',
+          body: 'hello'
+        }, function(err, data){
+          if (err) console.log(err);
+          console.log(data)
+        });
+    res.redirect('/menu');
+  });
 });
-
-
-
- //   client.sendMessage({
- //         to: '+17787923077',
- //         from: '+16042394685',
- //         body: 'hello'
- //       }, function(err, data){
- //         if (err) console.log(err);
- //         console.log(data)
- //       });
- // res.send('hello');
- //     });
-
 
 
 

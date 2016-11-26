@@ -39,11 +39,9 @@ knex.insert('')
 })
 
 function insertOrder(knex, data) {
-   console.log(data);
-   knex.insert({ 'order_id': data.id}, {'order_id': data.id}).into('order_dessert_item')
-   console.log("daaaaaaaaaaataaaaaaa:",data.id);
-   knex.insert({ 'order_id': data.id}).into('order_dessert_item').asCallback(fucntion(err, result){
-     if (err) return console.log(err);
-     return console.log(result)
-   })
-  }
+  console.log("daaaaaaaaaaataaaaaaa:",data.id);
+  knex.insert({ 'order_id': data.id}).into('order_dessert_item').asCallback(fucntion(err, result){
+    if (err) return console.log(err);
+    return console.log(result)
+  })
+}
