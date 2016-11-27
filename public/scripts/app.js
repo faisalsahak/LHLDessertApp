@@ -122,8 +122,12 @@ $(document).ready(function() {
     if(cart.length >= 1) $('.place-order').show();
 
     $('.empty').on("click", function(event) {
+
+        $(this).closest('div.cart-item').remove();
+
         // $(this).closest('div').remove();
         // cart.pop();
+
         // $('.cartQuantity').remove();
         // $('.place-order').remove();
         // $('.empty').remove();
@@ -151,6 +155,14 @@ $(document).ready(function() {
     $(".order-box").empty("");
     $(".order-box").html("<h2>No new orders</h2>");
     console.log("order complete!");
+  });
+
+
+  $(".action-decline-btn").on("click", function(event) {
+    $('.modal').modal("open");
+    $(".order-box").empty("");
+    $(".order-box").html("<h2>Order declined.</h2>");
+    console.log("declined!");
 
   });
 
