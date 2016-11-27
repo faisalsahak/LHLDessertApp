@@ -22,33 +22,27 @@ module.exports = {
     knex('order_dessert_item').max('order_id')
     .then(function(rows) {
       var maxOrderId = rows[0].max;
-      // console.log(maxOrderId);
-        knex.select('id', 'order_id', 'dessert_item_id', 'quantity')
-    .from('order_dessert_item')
-    // .max('order_id')
-    .orderBy('order_id', 'desc')
-    .where('order_id',  maxOrderId)
-    // .limit(10) //.offset()
-    .then(function(rows){
-      var orders = {};
-      // console.log(rows);
+      knex.select('id', 'order_id', 'dessert_item_id', 'quantity')
+          .from('order_dessert_item')
+          .orderBy('order_id', 'desc')
+          .where('order_id',  maxOrderId)
+          .then(function(rows){
+                var orders = {};
       // Let's restructure the data; it was in relational style, it will be in JS style
-      rows.forEach((row, index) => {
-        if (!orders[row.order_id]) {
-          orders[row.order_id] = { order_id: row.order_id, items: [] };
-        }
-        var item = {id: row.id, recipe_id: row.dessert_item_id, quantity: row.quantity /*, name: "FOOD"*/ }
-        orders[row.order_id].items.push(item)
-      })
-
-      // console.log(orders);
-      cb(null, orders);
-    })
-    .catch(function(err){
-      cb(err);
+                rows.forEach((row, index) => {
+                console.log("rows found here:", row);
+                if (!orders[row.order_id]) {
+                  orders[row.order_id] = { order_id: row.order_id, items: [] };
+                }
+                var item = {id: row.id, recipe_id: row.dessert_item_id, quantity: row.quantity /*, name: "FOOD"*/ }
+                orders[row.order_id].items.push(item)
+                });
+                cb(null, orders);
+          })
+          .catch(function(err){
+            cb(err);
+            });
     });
-    });
-
   },
 
   // render: (data, cb) => {
@@ -65,7 +59,7 @@ module.exports = {
   },
 
   insert: (data, cb) =>{
-    console.log("Data being insterted into the DB: ",data);
+    console.log("Data being insterted into the DB: ", data);
     knex.insert({})
     .into('order_table')
     .returning('id')
@@ -76,7 +70,9 @@ module.exports = {
       let order_id = parseInt(result[0]);
       let count = 0;
       data.forEach(function(menuItem) {
+        console.log("menu item list:", menuItem);
         knex.insert({
+          'description' : menuItem.foodName,
           'order_id': order_id,
           'dessert_item_id': menuItem.dessert_item_id,
           'quantity': menuItem.foodQuantity })

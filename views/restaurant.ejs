@@ -9,17 +9,26 @@
     <% order = orders[order_id]; %>
     <div class="container row">
       <div class="order-header col s12">
-        <i class="small material-icons">error</i> Order #<%= order.order_id %> </br>
+        <i class="small material-icons restaurant-alert">error</i> Order #<%= order.order_id %> </br>
       </div>
     <% order = orders[order_id]; %>
 
-    items:
     <% order.items.forEach(function(item) { %>
-      id: <%= item.id %></br>
-      item_name: <%= item.foodName %></br>
-      dessert_item_id(Cakes, Donuts, etc): <%= item.recipe_id %></br>
-      description: <%= '' %></br>
-      quantity: <%= item.quantity %></br>
+      <br>
+      Dessert Item:
+      <% if (item.recipe_id == 1) { %>
+      <h4> Cheesecake </h4>
+      <% } %>
+      <% if (item.recipe_id == 2) { %>
+      <h4> Chocolate Cake </h4>
+      <% } %><% if (item.recipe_id == 3) { %>
+      <h4> Chocolate Chip Cookie </h4>
+      <% } %><% if (item.recipe_id == 4) { %>
+      <h4> Apple Pie </h4>
+      <% } %><% if (item.recipe_id == 5) { %>
+      <h4> Tiramisu </h4>
+      <% } %>
+      quantity: x<%= item.quantity %></br>
       <div class="buttons">
     <% }); %>
 
@@ -27,7 +36,7 @@
       <input id="timeBox" type="text" name="timeBox">
     </form>
   <!-- buttons -->
-        <a class="action-accept-btn waves-effect waves-light btn onclick='' ">Accept</a>
+        <a class="action-accept-btn waves-effect waves-light btn onclick='' confirm-time-btn ">Confirm Order</a>
         <a class="waves-effect waves-light btn onclick='' ">Decline</a>
       </div>
     </div>
