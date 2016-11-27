@@ -1,16 +1,17 @@
 body {
-  background-color: #eee;
+  background-color: red;
 }
 
 .container-fluid {
-  border: 0px solid red;
+  border: 1px solid red;
   width: 80%;
-  padding: 10px;
+  margin: 0 auto;
+
 
 }
 
 .header-title {
-  border: 0px solid red;
+  border: 1px solid red;
   margin-top: 20px;
 }
 
@@ -23,12 +24,15 @@ body {
 }
 
 .order-header {
-  border: 0px solid red;
+  border: 1px solid red;
+}
+
+.status {
+  border: 1px solid red;
 }
 
 .order-info-box {
   border: 1px solid black;
-
 }
 
 .order-info {
@@ -40,21 +44,17 @@ body {
 }
 
 .order-info-data {
- border: 0px solid red;
+ border: 1px solid red;
  text-align: left;
  height: auto;
  padding: 3px;
  font-size: 16px;
 }
 
-.status {
-  border: 0px solid red;
-  margin: 0 auto;
-  height: auto;
-}
+
 
 .btn-group {
-  border: 0px solid red;
+  border: 1px solid red;
   padding: 5px;
 
 }

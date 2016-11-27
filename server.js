@@ -30,7 +30,7 @@ const orders = [];
 //var myclient = new twilio.RestClient(accountSid, authToken);
 
 const client = require('twilio')('ACdb7f78ac4f8d7daf206ea336c1dde288','205f30c8b12a4c0f4da4b5b5f2a2cf3a');
-const cheff = require('twilio')('accountsid','authToken');
+const cheff = require('twilio')('AC4549a415945c0a203b92dd0f0ba9fc68','9e0a55137495a9dbaca5878dcd7be75b');
 
 
 app.get("/", (req, res) => {
@@ -62,11 +62,13 @@ app.get("/", (req, res) => {
 
 
 app.post("/confirm-order", (req, res) => {
-
+  console.log("reqbody:", req.body);
+  let time = req.body.timeBox;
+  console.log("time:", time);
   cheff.sendMessage({
-    to: 'client',
-    from: '+twilio',
-    body: 'order will be ready in 15 minutes'
+    to: '+16048809542',
+    from: '+17786554043',
+    body: "Your order will be ready in: " + time + " mins."
   }, function(err, data){
     if (err) {
       console.log(err);

@@ -7,163 +7,72 @@
 
     <title>Restaurant Ticketing System</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- External CSS -->
+  <!-- Materialized -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+  <!-- CSS -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- External JS -->
+  <!-- Materialized -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
   </head>
   <body>
+
   <div class="container-fluid">
-    <div class = "header-title col-md-12 row">
+    <div class = "header-title col m12 row">
       <h1>RESTAURANT ORDERS <span class="glyphicon glyphicon-cutlery"></span></h1>
     </div>
 	  <div class="row">
-
-     <div class="order-box col-md-12">
+     <div class="order-box col s12">
 	     <div class="row">
-			   <div class="order-header col-md-10">
+         <div class="order-header col s12">
 					<h3>ORDER #002 <!-- order id--></h3>
-				 </div>
-				 <div class="status col-md-2">
-          <button type="" class="btn btn-danger pull-right">
-						<span class=" glyphicon glyphicon-exclamation-sign"></span> New Order! <!-- Alert -->
-					</button>
 				 </div>
 			 </div>
 			 <div class="order-info-box row">
-				<div class="order-info col-md-3">
+				<div class="order-info col s3">
 				  ITEM
 				</div>
-				<div class="order-info col-md-3">
+				<div class="order-info col s3">
           DESCRIPTION
 				</div>
-				<div class="order-info col-md-3">
+				<div class="order-info col s3">
           QUANTITY
 				</div>
-				<div class="order-info col-md-3">
+				<div class="order-info col s3">
           TIME
 				</div>
 			</div>
       <div class="order-info-data row">
-        <div id = "order-item" class="order-info col-md-3">
+        <div id = "order-item" class="col s3">
           Fish <!-- order menu item  -->
         </div>
-        <div id = "order-description" class="order-info col-md-3">
+        <div id = "order-description" class="col s3">
           No bones <!-- order special instructions -->
         </div>
-        <div id = "order-quantity" class="order-info col-md-3">
+        <div id = "order-quantity" class="col s3">
           1 <!-- order menu quantity -->
         </div>
-        <div id = "order-time" class="order-info col-md-3">
+        <div id = "order-time" class="col s3">
           18:00 <!-- order menu date -->
         </div>
       </div>
-			<div class="btn-group col-md-12">
-				<button class="btn btn-default">
-				  <span class="glyphicon glyphicon-time"></span> EST. TIME
-				</button>
-				<button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-spacing">
-					<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu">
-					<li>
-						<a href="#"> 10 mins</a>
-					</li>
-					<li>
-            <a href="#"> 20 mins</a>
-          </li>
-          <li>
-            <a href="#"> 30 mins</a>
-          </li>
-          <li>
-            <a href="#"> 40 mins</a>
-          </li>
-				</ul>
-        <button type="button" class="btn btn-danger pull-right">
-          <span class="glyphicon glyphicon-remove-sign"></span> DECLINE
-        </button>
-        <button type="button" class="btn btn-success btn-spacing pull-right">
-          <span class="glyphicon glyphicon-ok-sign"></span> ACCEPT
-        </button>
+      <div>
+        <a class="waves-effect waves-light btn">button</a>
       </div>
     </div>
 	 </div>
-
-  <div class="order-box col-md-12">
-       <div class="row">
-         <div class="order-header col-md-10">
-          <h3>ORDER #001 <!-- order id--></h3>
-         </div>
-         <div class="status col-md-2">
-          <button type="" class="btn btn-success pull-right">
-            <span class="glyphicon glyphicon-ok-sign"></span> Accepted! <!-- Alert -->
-          </button>
-         </div>
-       </div>
-       <div class="order-info-box row">
-        <div class="order-info col-md-3">
-          ITEM
-        </div>
-        <div class="order-info col-md-3">
-          DESCRIPTION
-        </div>
-        <div class="order-info col-md-3">
-          QUANTITY
-        </div>
-        <div class="order-info col-md-3">
-          TIME
-        </div>
-      </div>
-      <div class="order-info-data row">
-        <div id = "order-item" class="order-info col-md-3">
-          Steak <!-- order menu item  -->
-        </div>
-        <div id = "order-description" class="order-info col-md-3">
-          Well done <!-- order special instructions -->
-        </div>
-        <div id = "order-quantity" class="order-info col-md-3">
-          1 <!-- order menu quantity -->
-        </div>
-        <div id = "order-time" class="order-info col-md-3">
-          17:50 <!-- order menu date -->
-        </div>
-      </div>
-      <div class="btn-group col-md-12">
-        <button class="btn btn-default">
-          <span class="glyphicon glyphicon-time"></span> 20 mins
-        </button>
-        <button data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-spacing disabled">
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="#"> 10 mins</a>
-          </li>
-          <li>
-            <a href="#"> 20 mins</a>
-          </li>
-          <li>
-            <a href="#"> 30 mins</a>
-          </li>
-          <li>
-            <a href="#"> 40 mins</a>
-          </li>
-        </ul>
-        <button type="button" class="btn btn-danger pull-right disabled">
-          <span class="glyphicon glyphicon-remove-sign"></span> DECLINE
-        </button>
-        <button type="button" class="btn btn-success btn-spacing pull-right disabled">
-          <span class="glyphicon glyphicon-ok-sign"></span> ACCEPT
-        </button>
-      </div>
-    </div>
-   </div>
-  </div>
-
   </div>
 </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
   </body>
 </html>

@@ -97,4 +97,24 @@ $(document).ready(function() {
     if(cart.length >= 1) $('.place-order').show();
   };
 
+
+  //restaurant-side actions
+  // $(".action-accept-btn").on("click", function(event) {
+  //   event.preventDefault();
+  //   console.log("accepted!");
+
+  //   $.ajax({
+  //     method: "POST",
+  //     url: "/confirm-order",
+  //     data: {},
+  //     success: function(data) {
+  //       console.log("Success!")
+  //     },
+  //     error: function(data){
+  //       console.log("Something went wrong!", data);
+  //     }
+  //   })
+  // });
+
+
 });

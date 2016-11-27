@@ -18,21 +18,21 @@ var knex = require('knex')({
 
 // var id, order_id, dessert_item_id, description, quantity
 
+var result = [];
 
-
-knex.select("id", 'dessert_items') // id, order_id, dessert_item_id, description, quantity
-.from('menu_items')
+knex.select("*") // id, order_id, dessert_item_id, description, quantity
+.from('order_dessert_item')
 .asCallback(function(err, rows) {
-  if (err) return console.error(err);
-  let row = rows[0];
 
+  //loop thur table looking for new orders?
+
+  if (err) return console.error(err);
+  let row = rows;
   console.log(row);
-  console.log(row.id + " " + row.dessert_items + " ");
 })
-.then(function () {
+.then(function() {
     return knex.destroy();
 })
-
 
 //pull from heroku db (id, order_id, dessert_item_id, description, quantity)
 //set column id to var
