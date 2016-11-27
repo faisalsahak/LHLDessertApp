@@ -101,24 +101,14 @@ $(document).ready(function() {
         });
   };
 
+/////// Restarurant //////////
 
-  //restaurant-side actions
-  // $(".action-accept-btn").on("click", function(event) {
-  //   event.preventDefault();
-  //   console.log("accepted!");
+  $('.restaurant-alert').css('color', 'red');
 
-  //   $.ajax({
-  //     method: "POST",
-  //     url: "/confirm-order",
-  //     data: {},
-  //     success: function(data) {
-  //       console.log("Success!")
-  //     },
-  //     error: function(data){
-  //       console.log("Something went wrong!", data);
-  //     }
-  //   })
-  // });
+  $('.confirm-time-btn').on("click" , function (event) {
+    $('.restaurant-alert').css('color', 'green');
+  })
+
 
 
 });
