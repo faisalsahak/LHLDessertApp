@@ -93,14 +93,21 @@ $(document).ready(function() {
     });
     if(cart.length >= 1) $('.place-order').show();
 
-    // $('.empty').on("click", function(event) {
-    //     $('.cartTitle').empty();
-    //     $('.cartQuantity').empty();
-    //     $('.place-order').hide();
-    //     $('.empty').hide();
-    //     });
+    $('.empty').on("click", function(event) {
+        $(this).closest('div').remove();
+        // $('.cartQuantity').remove();
+        // $('.place-order').remove();
+        // $('.empty').remove();
+        });
   };
 
+/////// Restarurant //////////
+
+  $('.restaurant-alert').css('color', 'red');
+
+  $('.confirm-time-btn').on("click" , function (event) {
+    $('.restaurant-alert').css('color', 'green');
+  })
 
   //restaurant-side actions
   $(".action-accept-btn").on("click", function(event) {
