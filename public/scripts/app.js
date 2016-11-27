@@ -34,33 +34,30 @@ $(document).ready(function() {
 
 //When the food item one button is clicked the cart will appear
   $('.add-to-cart').on("click", function(element) {
-
-
-
+     $('.empty-cart-message').hide();
     var foodItemId = $(this).closest(".food-item").data("food-item-id");
     var foodName = $(this).closest(".description").find(".title").text();
     var foodQuantity = $(this).closest(".food-item").find(".counter").text();
 
-
-    console.log("foodItemID", foodItemId)
-    console.log("foodname", foodName)
-    console.log("foodQuant", foodQuantity);
-    // var new_cart_item = $('.cart-item.hidden').clone().removeClass('hidden').show().appendTo('.cart-items');
-
-    // $(new_cart_item).find('.title').text(foodName);
+    if (foodQuantity == 0 ) {
+      element.preventDefault();
+      console.log("if stat foodQuantity", foodQuantity);
+    } else {
 
     cart.push({dessert_item_id: foodItemId, foodName: foodName, foodQuantity: foodQuantity});
 
     console.log("cart order", cart);
 
-    //Working
-    // cart.push({foodItemId: foodItemId, foodName: foodName});
-
-
     // Format for object being submitted to DB
     // {FoodItemId: 1, Quantity: 2, OrderNumber: 1}
 
     renderCartItems();
+    }
+
+    $('.counter').html(function(i, value) {
+      return 0;
+    })
+
   });
 
 
@@ -90,11 +87,18 @@ $(document).ready(function() {
     $(cart).each(function(k, cartItem) {
 
       $('.cart-items').append(
-      "<div  class=\"cart-item hidden\"><h5 class=\"title\">" + cartItem.foodName + "</h5><div class=\"quantity\"><span class=\"label\">x</span><span class=\"quantity number\">" + cartItem.foodQuantity + "</span></div>"
+      "<div  class=\"cart-item hidden\"><h5 class=\"cartTitle\">" + cartItem.foodName + "</h5><div class=\"quantity\"><span class=\"label\">x</span><span class=\"cartQuantity number\">" + cartItem.foodQuantity + "</span><button class=\"empty\">Empty Cart</button></div>"
 
       );
     });
     if(cart.length >= 1) $('.place-order').show();
+
+    // $('.empty').on("click", function(event) {
+    //     $('.cartTitle').empty();
+    //     $('.cartQuantity').empty();
+    //     $('.place-order').hide();
+    //     $('.empty').hide();
+    //     });
   };
 
 
