@@ -93,12 +93,12 @@ $(document).ready(function() {
     });
     if(cart.length >= 1) $('.place-order').show();
 
-    // $('.empty').on("click", function(event) {
-    //     $('.cartTitle').empty();
-    //     $('.cartQuantity').empty();
-    //     $('.place-order').hide();
-    //     $('.empty').hide();
-    //     });
+    $('.empty').on("click", function(event) {
+        $(this).closest('div').remove();
+        // $('.cartQuantity').remove();
+        // $('.place-order').remove();
+        // $('.empty').remove();
+        });
   };
 
 
