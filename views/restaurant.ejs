@@ -32,15 +32,32 @@
     <% }); %>
 
     <form action="/confirm-order" method="POST">
-      <input id="timeBox" type="text" name="timeBox" placeholder="This Order Will Take..">
+      <input id="timeBox" type="text" name="timeBox" placeholder="This Order Will Take.." style="width: 150px">
+      <a type="submit" class="action-accept-btn waves-effect waves-light btn onclick='' confirm-time-btn">Confirm Order</a>
+       <a class="action-decline-btn waves-effect waves-light btn">Decline</a>
     </form>
       <div class = "buttons col s8">
+
+        <!-- Modal Structure -->
+
   <!-- buttons -->
-        <a class="action-accept-btn waves-effect waves-light btn onclick='' confirm-time-btn ">Confirm Order</a>
-        <a class="waves-effect waves-light btn onclick='' ">Decline</a>
+       <!--  <a type="submit" class="action-accept-btn waves-effect waves-light btn onclick='' confirm-time-btn ">Confirm Order</a> -->
+
+       <!--  <a class="action-decline-btn waves-effect waves-light btn onclick='' ">Decline</a> -->
+
   <!-- order completed button -->
         <a class="action-complete-btn waves-effect waves-light btn">Order Completed <i class="small material-icons">done</i></a>
         </div>
+
+       <div class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
 
     </div>
     </div>

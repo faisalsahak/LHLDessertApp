@@ -158,6 +158,14 @@ $(document).ready(function() {
     $(".order-box").empty("");
     $(".order-box").html("<h2>No new orders</h2>");
     console.log("order complete!");
+  });
+
+
+  $(".action-decline-btn").on("click", function(event) {
+    $('.modal').modal("open");
+    $(".order-box").empty("");
+    $(".order-box").html("<h2>Order declined.</h2>");
+    console.log("declined!");
 
   });
 
