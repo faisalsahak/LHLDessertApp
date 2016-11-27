@@ -1,16 +1,15 @@
 <% include ./partials/_head %>
     <% include ./partials/_header %>
 
-    <script type="text/javascript">
-    $('.action-accept-btn').openFAB();
-    </script>
-
   <% Object.keys(orders).forEach(function(order_id) { %>
     <% order = orders[order_id]; %>
-    <div class="container row">
+    <div class="container row col s12">
+    <div class= "order-box">
+
       <div class="order-header col s12">
         <i class="small material-icons">error</i> Order #<%= order.order_id %> </br>
       </div>
+
     <% order = orders[order_id]; %>
 
     items:
@@ -20,18 +19,22 @@
       dessert_item_id(Cakes, Donuts, etc): <%= item.recipe_id %></br>
       description: <%= '' %></br>
       quantity: <%= item.quantity %></br>
-      <div class="buttons">
-    <% }); %>
+      <hr>
 
-    <form action="/confirm-order" method="POST">
-      <input id="timeBox" type="text" name="timeBox">
+    <% }); %>
+       <i class="small material-icons">schedule</i><form action="/confirm-order" method="POST">
+      <input id="timeBox" type="text" name="timeBox" placeholder="Est time" style="width:100px">
     </form>
+      <div class = "buttons col s8">
   <!-- buttons -->
-        <a class="action-accept-btn waves-effect waves-light btn onclick='' ">Accept</a>
+        <a class="action-accept-btn waves-effect waves-light btn">Accept</a>
         <a class="waves-effect waves-light btn onclick='' ">Decline</a>
-      </div>
+  <!-- order completed button -->
+        <a class="action-complete-btn waves-effect waves-light btn">Order Completed <i class="small material-icons">done</i></a>
+        </div>
+
     </div>
-    <hr>
+    </div>
 <% }); %>
 
 

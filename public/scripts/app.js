@@ -103,22 +103,17 @@ $(document).ready(function() {
 
 
   //restaurant-side actions
-  // $(".action-accept-btn").on("click", function(event) {
-  //   event.preventDefault();
-  //   console.log("accepted!");
+  $(".action-accept-btn").on("click", function(event) {
+    event.preventDefault();
+    console.log("accepted!");
+  });
 
-  //   $.ajax({
-  //     method: "POST",
-  //     url: "/confirm-order",
-  //     data: {},
-  //     success: function(data) {
-  //       console.log("Success!")
-  //     },
-  //     error: function(data){
-  //       console.log("Something went wrong!", data);
-  //     }
-  //   })
-  // });
+  $(".action-complete-btn").on("click", function(event) {
+    $(".order-box").empty("");
+    $(".order-box").html("<h2>No new orders</h2>");
+    console.log("order complete!");
+
+  });
 
 
 });
