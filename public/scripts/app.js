@@ -1,6 +1,7 @@
 // App //
 $(document).ready(function() {
   $('.collapsible').collapsible();
+   $('.modal').modal()
 
   const cart = [];
   const orderNumber = 0;
@@ -77,9 +78,39 @@ $(document).ready(function() {
       error: function(data){
         alert("Something went wrong!");
       }
-    })
+    });
+
+
+    $('#modal1').modal('open');
+      $('.modal').modal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      in_duration: 300, // Transition in duration
+      out_duration: 200, // Transition out duration
+      starting_top: '4%', // Starting top style attribute
+      ending_top: '10%', // Ending top style attribute
+      ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+        console.log(modal, trigger);
+      },
+      complete: function() {
+      } // Callback for Modal close
+    }
+  );
+
+      $('.cart-items').empty();
+      $('.place-order').hide();
+
+
+
 
   });
+
+
+
+
+
+
+
 
 
   function renderCartItems() {
@@ -100,6 +131,9 @@ $(document).ready(function() {
         // $('.place-order').remove();
         // $('.empty').remove();
         });
+
+
+
   };
 
 /////// Restarurant //////////
