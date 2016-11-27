@@ -94,7 +94,8 @@ $(document).ready(function() {
     if(cart.length >= 1) $('.place-order').show();
 
     $('.empty').on("click", function(event) {
-        $(this).closest('div').remove();
+        // $(this).closest('div').remove();
+        // cart.pop();
         // $('.cartQuantity').remove();
         // $('.place-order').remove();
         // $('.empty').remove();
