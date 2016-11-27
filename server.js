@@ -12,7 +12,7 @@ const renderOrder   = require("./routes/render-orders");
 // const jsFile        = require('./public/scripts/app');
 
 // Middleware //
-app.use(sass({
+app.use('/styles', sass({
   src: __dirname + "/sass",
   dest: __dirname + "/public/stylesheets",
   debug: true,
