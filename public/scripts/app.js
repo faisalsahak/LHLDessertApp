@@ -100,9 +100,6 @@ $(document).ready(function() {
       $('.cart-items').empty();
       $('.place-order').hide();
 
-
-
-
   });
 
 
