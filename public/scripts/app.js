@@ -34,7 +34,7 @@ $(document).ready(function() {
 
 //When the food item one button is clicked the cart will appear
   $('.add-to-cart').on("click", function(element) {
-
+     $('.empty-cart-message').hide();
     var foodItemId = $(this).closest(".food-item").data("food-item-id");
     var foodName = $(this).closest(".description").find(".title").text();
     var foodQuantity = $(this).closest(".food-item").find(".counter").text();
@@ -53,6 +53,7 @@ $(document).ready(function() {
 
     renderCartItems();
     }
+
     $('.counter').html(function(i, value) {
       return 0;
     })
