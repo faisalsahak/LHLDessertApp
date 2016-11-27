@@ -128,10 +128,29 @@
 
 
           <form action="/sendOrder" method="Post">
-            <button style="display:none" class="btn waves-effect waves-light place-order" type="submit" name="sendOrder">Send Order
+            <button href="#modal1" style="display:none" class="btn waves-effect waves-light place-order" type="submit" name="sendOrder">Send Order
             <i class="material-icons right">send</i>
             </button>
           </form>
+
+
+         <!-- Modal Trigger -->
+       <!--    <a class="waves-effect waves-light btn" href="#modal1">Modal</a> -->
+
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Success!</h4>
+              <p>Your order has been submitted successfully. You will receive a text message shortly indicating the wait time for your pick up.</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Okay, Thanks!</a>
+            </div>
+          </div>
+
+
+
+
       </div>
     </div>
   </container>
