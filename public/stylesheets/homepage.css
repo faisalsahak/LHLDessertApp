@@ -165,7 +165,7 @@ table {
   margin: auto;
 }
 
-span {
+.menuButton {
   margin: auto;
   display: inline-block;
 	float: right;
