@@ -10,6 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/atom888/lhl-midterm-project.git"
   },
+
+  "engines": {
+    "node": "6.3.1"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
