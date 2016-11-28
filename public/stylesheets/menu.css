@@ -34,6 +34,10 @@ button.btn.add-to-cart {
   padding: 20px;
 }
 
+.collapsible-body.description .description-apple {
+  color: #9699a6;
+}
+
 .subtract-quantity.btn {
   margin-left: 20px;
 }
@@ -59,6 +63,14 @@ img {
 
  .menu-title {
   font-weight: 300;
+ }
+
+ .modal {
+  background-color: #FF6B8B;
+ }
+
+ .modal-footer{
+  background-color: #FF6B8B;
  }
 
 
