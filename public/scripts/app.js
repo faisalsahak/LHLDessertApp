@@ -115,7 +115,7 @@ $(document).ready(function() {
     $(cart).each(function(k, cartItem) {
 
       $('.cart-items').append(
-      "<div  class=\"cart-item hidden\"><h5 class=\"cartTitle\">" + cartItem.foodName + "</h5><div class=\"quantity\"><span class=\"label\">x</span><span class=\"cartQuantity number\">" + cartItem.foodQuantity + "</span><button class=\"empty\">Empty Cart</button></div>"
+      "<div  class=\"cart-item hidden\"><h5 class=\"cartTitle\">" + cartItem.foodName + "</h5><div class=\"quantity\"><span class=\"label\">x</span><span class=\"cartQuantity number\">" + cartItem.foodQuantity + "</span></div>"
 
       );
     });
@@ -146,10 +146,23 @@ $(document).ready(function() {
   })
 
   //restaurant-side actions
-  $(".action-accept-btn").on("click", function(event) {
-    event.preventDefault();
-    console.log("accepted!");
-  });
+  // $(".action-accept-btn").on("click", function(event) {
+  //   event.preventDefault();
+  //
+  //   $.ajax ({
+  //     method: 'post',
+  //     url: '/confirm-order',
+  //     success: function(){
+  //       console.log("accepted!");
+  //     }
+  //   })
+  //
+  // });
+// });
+// 
+// $('#cheffConfirmOrder').on('click', function(){
+//   $('#timeBox').val();
+// })
 
   $(".action-complete-btn").on("click", function(event) {
     $(".order-box").empty("");

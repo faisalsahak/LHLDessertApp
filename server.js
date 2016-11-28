@@ -5,6 +5,7 @@ const bodyParser    = require("body-parser");
 const confirmOrders = require("./routes/confirm-orders");
 const renderOrder   = require("./routes/render-orders");
 
+
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -67,12 +68,13 @@ app.post("/confirm-order", (req, res) => {
     if (err) {
       console.log(err);
       res.status(500).send("TWILIO IS FUCKED");
-    } else {
-      // console.log(data)
-      res.send();
     }
+    // else {
+    //   // console.log(data)
+    //
+    // }
   });
-
+   res.redirect('/restaurant');
 });
 
 
