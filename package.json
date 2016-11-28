@@ -4,16 +4,16 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node server"
+  },
+    "engines": {
+      "node": "6.3.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/atom888/lhl-midterm-project.git"
   },
 
-  "engines": {
-    "node": "6.3.1"
-},
   "keywords": [],
   "author": "",
   "license": "ISC",
