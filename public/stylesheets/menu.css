@@ -21,11 +21,12 @@ button.btn.add-to-cart {
 .collapsible-body.description h3 {
   display: inline-block;
   margin-left: 20px;
-   margin-top: 20px;
+  margin-top: 20px;
 }
 
 .collapsible-body.description .description {
   display: inline-block;
+  color: #9699a6;
   padding: 20px;
 }
 
