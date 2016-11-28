@@ -34,6 +34,10 @@ button.btn.add-to-cart {
   padding: 20px;
 }
 
+.description-apple {
+  color: #9699a6;
+}
+
 .subtract-quantity.btn {
   margin-left: 20px;
 }
