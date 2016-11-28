@@ -115,7 +115,7 @@ $(document).ready(function() {
     $(cart).each(function(k, cartItem) {
 
       $('.cart-items').append(
-      "<div  class=\"cart-item hidden\"><h5 class=\"cartTitle\">" + cartItem.foodName + "</h5><div class=\"quantity\"><span class=\"label\">x</span><span class=\"cartQuantity number\">" + cartItem.foodQuantity + "</span><button class=\"empty\">Empty Cart</button></div>"
+      "<div  class=\"cart-item hidden\"><h5 class=\"cartTitle\">" + cartItem.foodName + "</h5><div class=\"quantity\"><span class=\"label\">x</span><span class=\"cartQuantity number\">" + cartItem.foodQuantity + "</span></div>"
 
       );
     });

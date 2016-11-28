@@ -1,0 +1,76 @@
+body {
+  background-color : #FFF7E2;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+button.btn.add-to-cart {
+  float: right;
+  margin-right: 20px;
+}
+
+.collapsible-header {
+  background-color: #2ED3AF;
+}
+
+.collapsible-body.description {
+  background-color: #FFFFFF;
+}
+
+.collapsible-body.description h3 {
+  display: inline-block;
+  margin-left: 20px;
+   margin-top: 20px;
+}
+
+.collapsible-body.description .description {
+  display: inline-block;
+  padding: 20px;
+}
+
+.subtract-quantity.btn {
+  margin-left: 20px;
+}
+
+container h1 {
+  text-align: center;
+}
+
+img {
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+#logo {
+  margin-top: 10px;
+}
+
+ main {
+  flex: 1 0 auto;
+ }
+
+
+.row-apple {
+  margin-bottom: 20px;
+}
+
+
+
+/*/*/*/*
+
+@media only screen and (max-width : 375px) {
+  container.row.col.s7 {
+    width: 89%;
+  }
+  container.row.col.s2 {
+    display: none;
+  }
+  container.row.col.s3 {
+
+  }
+
+}
+*/*/*/*/
