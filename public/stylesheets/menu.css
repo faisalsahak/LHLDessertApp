@@ -10,6 +10,10 @@ button.btn.add-to-cart {
   margin-right: 20px;
 }
 
+.cart-title {
+  font-weight: 300;
+}
+
 .collapsible-header {
   background-color: #2ED3AF;
 }
@@ -51,6 +55,10 @@ img {
 
  main {
   flex: 1 0 auto;
+ }
+
+ .menu-title {
+  font-weight: 300;
  }
 
 
