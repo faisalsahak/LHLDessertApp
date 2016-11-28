@@ -1,0 +1,56 @@
+body
+  background-color: #FFF7E2
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+
+button.btn.add-to-cart
+  float: right
+  margin-right: 20px
+
+.cart-title
+  font-weight: 300
+
+.collapsible-header
+  background-color: #2ED3AF
+
+.collapsible-body.description
+  background-color: #FFFFFF
+  h3
+    display: inline-block
+    margin-left: 20px
+    margin-top: 20px
+  .description
+    display: inline-block
+    color: #9699a6
+    padding: 20px
+
+.description-apple
+  color: #9699a6
+
+.subtract-quantity.btn
+  margin-left: 20px
+
+container h1
+  text-align: center
+
+img
+  display: inline-block
+  float: right
+  margin-right: 20px
+  margin-top: 20px
+
+#logo
+  margin-top: 10px
+
+main
+  flex: 1 0 auto
+
+.menu-title
+  font-weight: 300
+
+.modal, .modal-footer
+  background-color: #FF6B8B
+
+.row-apple
+  margin-bottom: 20px

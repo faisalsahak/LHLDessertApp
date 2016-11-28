@@ -1,0 +1,166 @@
+body
+  font-size: 15px
+  /*line-height: 1.52;
+  background-color: #FFF7E2
+  font-size: 16px
+  font-family: 'Open Sans', sans-serif
+  font-weight: 400
+  /*overflow-x: hidden;
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote
+  &:before, &:after
+    content: ''
+    content: none
+
+q
+  &:before, &:after
+    content: ''
+    content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+#banner
+  background: url(../images/background.jpg) no-repeat center
+  background-size: cover
+  height: 630px
+  h1
+    /*font-family: 'Satisfy', sans-serif;
+    /*font-size: 45px;
+    color: #FFF7E2
+    font-family: 'Satisfy', cursive
+  h5
+    /*font-family: 'PT Sans', sans-serif;
+    color: #FFF7E2
+    font-weight: lighter
+    /*font-size: 34px;
+
+/*.bg-color{
+ *    background-color: RGBA(0, 0, 0, 0.61);
+ *    min-height: 630px;
+ *}
+
+.address-body, .hours-body
+  color: #9699a6
+
+.header-title
+  font-weight: 300
+
+.logo-name
+  font-family: 'Satisfy', sans-serif
+  font-size: 65px
+  margin-top: 140px
+  color: #2BBCB0
+
+.sidenav
+  height: 100%
+  width: 0
+  position: fixed
+  z-index: 1
+  top: 0
+  right: 0
+  background-color: #94D3C5
+  overflow-x: hidden
+  padding-top: 60px
+  transition: 0.5s
+  a
+    padding: 8px 8px 8px 32px
+    text-decoration: none
+    font-size: 25px
+    color: #4F7096
+    display: block
+    transition: 0.3s
+    &:hover
+      color: #FFF7E2
+
+.offcanvas a:focus
+  color: #FFF7E2
+
+.closebtn
+  position: absolute
+  top: 0
+  right: 25px
+  font-size: 36px !important
+  margin-left: 50px
+
+.header-h
+  color: #FFB03B
+  font-size: 46px
+  font-family: 'Satisfy', sans-serif
+  font-weight: 300
+
+.header-p
+  color: #9699a6
+  font-size: 16px
+  padding: 10px 0px
+
+.heading
+  font-family: 'Satisfy', sans-serif
+  color: black
+  font-size: 24px
+
+.headerP
+  color: #9699a6
+
+.details-list
+  margin-top: 20px
+  ul li i
+    margin-right: 10px
+    color: #9699a6
+
+.details-text
+  border-right: 2px solid #9699a6
+  background-color: rgba(14, 4, 4, 0.7)
+  border-right: 2px solid #A87F41
+  padding: 20px 20px 30px 30px
+  overflow: auto
+  p
+    color: #9699a6
+    line-height: 26px
+    letter-spacing: 1px
+    font-weight: 300
+
+.list-horizontal li
+  display: inline-block
+
+.container
+  text-align: center
+
+/*.pull-right {
+ *  position: absolute;
+ *  left: -50px;
+ *  margin-left: 5px;
+ *}
+
+.widget
+  margin: auto
+
+.menuButton
+  margin: auto
+  display: inline-block
+  float: right
+
+#logo
+  margin-top: 10px
+  float: left
+
+.pull-right
+  margin-left: 20px
+
+@media (min-width: 768px) and (max-width: 980px)
+  .content-holder h2
+    font-size: 23px
+  .details-text p
+    line-height: 16.6px
+
+@media (min-width: 451px) and (max-width: 767px)
+  .details-text
+    border: 0px
+    border-bottom: 2px solid #A87F41

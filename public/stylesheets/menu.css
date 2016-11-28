@@ -34,7 +34,7 @@ button.btn.add-to-cart {
   padding: 20px;
 }
 
-.collapsible-body.description .description-apple {
+.description-apple {
   color: #9699a6;
 }
 
@@ -79,19 +79,3 @@ img {
 }
 
 
-
-/*/*/*/*
-
-@media only screen and (max-width : 375px) {
-  container.row.col.s7 {
-    width: 89%;
-  }
-  container.row.col.s2 {
-    display: none;
-  }
-  container.row.col.s3 {
-
-  }
-
-}
-*/*/*/*/
