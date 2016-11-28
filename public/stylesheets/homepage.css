@@ -26,7 +26,7 @@ table {
 	border-spacing: 0;
 }
 #banner{
-    background: url(../images/background.jpg) no-repeat center top;
+    background: url(../images/background.jpg) no-repeat center ;
     background-size: cover;
     height: 630px;
 }
@@ -34,15 +34,17 @@ table {
     background-color: RGBA(0, 0, 0, 0.61);
     min-height: 630px;
 }*/
-#banner h2{
-    font-family: 'Satisfy', sans-serif;
-    font-size: 45px;
-    color: #2ED3AF;
+#banner h1{
+    /*font-family: 'Satisfy', sans-serif;*/
+    /*font-size: 45px;*/
+    color: #FFF7E2;
+		font-family: 'Satisfy', cursive;
 }
 #banner p{
-    font-family: 'PT Sans', sans-serif;
-    color: #2ED3AF;
-    font-size: 34px;
+    /*font-family: 'PT Sans', sans-serif;*/
+    color: #FFF7E2;
+		font-weight: lighter;
+    /*font-size: 34px;*/
 }
 
 .logo-name{
@@ -58,7 +60,7 @@ table {
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: #FFF7E2;
+    background-color: #94D3C5;
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
@@ -67,7 +69,7 @@ table {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #2BBCB0;
+    color: #4F7096;
     display: block;
     transition: 0.3s
 }
@@ -95,8 +97,12 @@ table {
 
 .heading{
     font-family: 'Satisfy', sans-serif;
-    color: #FFB03B;
+    color: black;
     font-size: 24px;
+}
+
+.headerP {
+	color: #9699a6;
 }
 
 .details-list{
@@ -104,11 +110,11 @@ table {
 }
 .details-list ul li i {
     margin-right: 10px;
-    color: #ffb03b;
+    color: #9699a6;
 }
 
 .details-text {
-    border-right: 2px solid #841b2d;
+    border-right: 2px solid #9699a6;
 }
 .details-text {
     background-color: rgba(14, 4, 4, 0.70);
@@ -118,7 +124,7 @@ table {
 }
 
 .details-text p {
-    color: #E8E8E8;
+    color: #9699a6;
     line-height: 26px;
     letter-spacing: 1px;
     font-weight: 300;
@@ -162,6 +168,11 @@ table {
 span {
   margin: auto;
   display: inline-block;
+	float: right;
+}
+#logo {
+  margin-top: 10px;
+	float: left;
 }
 
 .pull-right {
