@@ -1,71 +1,87 @@
 <% include ./partials/_head %>
-    <% include ./partials/_header %>
+
 
   <% Object.keys(orders).forEach(function(order_id) { %>
     <% order = orders[order_id]; %>
-    <div class="container row col s12">
-    <div class= "order-box">
+<div class="container row">
+  <h2>Orders List</h2>
+  <div class= "order-box col s12">
+    <div class="order-header col s12">
+      <i class="small material-icons restaurant-alert">error</i>
+        Order #<%= order.order_id %></br>
+    </div>
 
-      <div class="order-header col s12">
-        <i class="small material-icons restaurant-alert">error</i> Order #<%= order.order_id %> </br>
+    <div class="order-table">
+      <div class = "order-table-title col s6">
+        ITEM
+      </div>
+      <div class = "order-table-title col s6">
+        QUANTITY
+      </div>
+    </div>
+
+    <div class="order-data">
+    <% order = orders[order_id]; %>
+    <% order.items.forEach(function(item) { %>
+      <table>
+        <tbody>
+          <tr>
+            <td><% if (item.recipe_id == 1) { %>
+        Cheesecake
+        <% } %>
+        <% if (item.recipe_id == 2) { %>
+        Chocolate Cake
+        <% } %><% if (item.recipe_id == 3) { %>
+         Chocolate Chip Cookie
+        <% } %><% if (item.recipe_id == 4) { %>
+         Apple Pie
+        <% } %><% if (item.recipe_id == 5) { %>
+         Tiramisu
+        <% } %>
+        </td>
+            <td>  <%= item.quantity %></td>
+            <% }); %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      <!-- <div class = "order-data-item col s6">
+        <% order = orders[order_id]; %>
+        <% order.items.forEach(function(item) { %>
+        <% if (item.recipe_id == 1) { %>
+        Cheesecake
+        <% } %>
+        <% if (item.recipe_id == 2) { %>
+        Chocolate Cake
+        <% } %><% if (item.recipe_id == 3) { %>
+         Chocolate Chip Cookie
+        <% } %><% if (item.recipe_id == 4) { %>
+         Apple Pie
+        <% } %><% if (item.recipe_id == 5) { %>
+         Tiramisu
+        <% } %>
       </div>
 
-    <% order = orders[order_id]; %>
+      <div class = "order-data-num col s6">
+        x<%= item.quantity %>
+      </div>
 
-    <% order.items.forEach(function(item) { %>
-      <br>
-      Dessert Item:
-      <% if (item.recipe_id == 1) { %>
-      <h4> Cheesecake </h4>
-      <% } %>
-      <% if (item.recipe_id == 2) { %>
-      <h4> Chocolate Cake </h4>
-      <% } %><% if (item.recipe_id == 3) { %>
-      <h4> Chocolate Chip Cookie </h4>
-      <% } %><% if (item.recipe_id == 4) { %>
-      <h4> Apple Pie </h4>
-      <% } %><% if (item.recipe_id == 5) { %>
-      <h4> Tiramisu </h4>
-      <% } %>
-      quantity: x<%= item.quantity %></br>
-      <div class="buttons">
-    <% }); %>
+      <% }); %>
+  <% }); %>
+    </div> -->
+    <div class="buttons col s12">
+      <form action="/confirm-order" method="POST">
+        <i class="small material-icons">schedule</i>
+        <input id="timeBox" type="text" name="timeBox" placeholder="Est Time" style="width: 60px">
+        <a type="submit" class="action-accept-btn waves-effect waves-light btn onclick='' confirm-time-btn btn-small button-spacing">Confirm Order</a>
+         <a class="action-decline-btn waves-effect waves-light btn button-spacing">Decline Order</a>
+      <a class="action-complete-btn waves-effect waves-light btn button-spacing">Order Completed</a>
 
-    <form action="/confirm-order" method="POST">
-      <input id="timeBox" type="text" name="timeBox" placeholder="This Order Will Take.." style="width: 150px">
-      <a type="submit" class="action-accept-btn waves-effect waves-light btn onclick='' confirm-time-btn">Confirm Order</a>
-       <a class="action-decline-btn waves-effect waves-light btn">Decline</a>
-    </form>
-      <div class = "buttons col s8">
-
-        <!-- Modal Structure -->
-
-  <!-- buttons -->
-       <!--  <a type="submit" class="action-accept-btn waves-effect waves-light btn onclick='' confirm-time-btn ">Confirm Order</a> -->
-
-       <!--  <a class="action-decline-btn waves-effect waves-light btn onclick='' ">Decline</a> -->
-
-  <!-- order completed button -->
-        <a class="action-complete-btn waves-effect waves-light btn">Order Completed <i class="small material-icons">done</i></a>
+      </form>
         </div>
-
-       <div class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+    </br>
   </div>
-
-    </div>
-    </div>
-<% }); %>
-
-
- <% include ./partials/_footer %>
-
+</div>
 
   </body>
 </html>

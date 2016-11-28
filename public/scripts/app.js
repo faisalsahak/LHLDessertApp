@@ -153,15 +153,15 @@ $(document).ready(function() {
 
   $(".action-complete-btn").on("click", function(event) {
     $(".order-box").empty("");
-    $(".order-box").html("<h2>No new orders</h2>");
-    console.log("order complete!");
+    $(".order-box").css("border", "0px").html("<h4>No new orders.</h4>");
+    console.log("Order complete!");
   });
 
 
   $(".action-decline-btn").on("click", function(event) {
     $('.modal').modal("open");
     $(".order-box").empty("");
-    $(".order-box").html("<h2>Order declined.</h2>");
+    $(".order-box").css("border", "0px").html("<h4>Order declined.</h4>");
     console.log("declined!");
 
   });

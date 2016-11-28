@@ -1,0 +1,56 @@
+
+body {
+  background-color: #FFF7E2;
+}
+
+.container {
+  margin-top: 0;
+  width: 80%;
+}
+
+.order-box {
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 20px;
+  height: auto;
+  }
+
+  .order-header {
+    border: 0px solid red;
+    font-size: 30px;
+  }
+
+  .order-table {
+    border: 0px solid ;
+  }
+
+  .order-table-title {
+    border: 0px solid red;
+    border-bottom: 1px solid black;
+  }
+
+  .order-data {
+    border: 0px solid red;
+  }
+
+  .order-data table tr td {
+    border: 0px solid red;
+    width: 50%;
+  }
+
+  .buttons {
+    border: 1px solid red;
+    border-top: 1px solid black;
+    padding: 20px;
+    align-content: center;
+  }
+
+  .btn {
+    background-color: #2BBCB0;
+  }
+
+
+  .button-spacing {
+    margin: 8px;
+  }
+
