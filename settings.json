@@ -1,0 +1,8 @@
+{
+ "user": "hugzgckyxvlzub",
+ "password": "Ckq2Wk5vgj7QPd6olRBjKNqlcc",
+ "database": "d2bervibf31phh",
+ "hostname": "ec2-54-243-190-37.compute-1.amazonaws.com",
+ "port": "5432",
+ "ssl": true
+}
