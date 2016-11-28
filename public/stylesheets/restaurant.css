@@ -3,19 +3,21 @@ body {
   background-color: #FFF7E2;
 }
 
-.container {
+.container-rest {
   margin-top: 0;
   width: 80%;
+  font-size: 14px;
 }
 
 .order-box {
   border: 3px solid black;
   border-radius: 10px;
   margin: 20px;
+  margin-top: 2px;
   height: auto;
   }
 
-  .order-header {
+.order-header {
     border: 0px solid red;
     font-size: 30px;
   }
@@ -39,7 +41,7 @@ body {
   }
 
   .buttons {
-    border: 1px solid red;
+    border: 0px solid red;
     border-top: 1px solid black;
     padding: 20px;
     align-content: center;
@@ -49,8 +51,14 @@ body {
     background-color: #2BBCB0;
   }
 
-
   .button-spacing {
-    margin: 8px;
+    margin: 4px;
   }
+
+  .icon {
+    margin-top: 5px;
+  }
+
+
+
 

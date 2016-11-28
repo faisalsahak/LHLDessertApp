@@ -3,8 +3,13 @@
 
   <% Object.keys(orders).forEach(function(order_id) { %>
     <% order = orders[order_id]; %>
-<div class="container row">
-  <h2>Orders List</h2>
+<div class="container-rest row">
+
+  <div class="order-header-title">
+  <img id="logo" src="../images/Logomakr_3n7vJw.png" height="45px" ,="" width="45px">
+  <h2 class="logo-name" style="margin: 20px">Just Desserts.</h2>
+  </div>
+
   <div class= "order-box col s12">
     <div class="order-header col s12">
       <i class="small material-icons restaurant-alert">error</i>
@@ -46,20 +51,21 @@
       </table>
     </div>
 
-      <div class = "order-data-num col s6">
-        x<%= item.quantity %>
-      </div>
-
-      <% }); %>
   <% }); %>
-    </div> -->
+
+
+ <!--    </div> -->
     <div class="buttons col s12">
       <form action="/confirm-order" method="POST">
-        <i class="small material-icons">schedule</i>
+
+        <i class="small material-icons icon">schedule</i>
         <input id="timeBox" type="text" name="timeBox" placeholder="Est Time" style="width: 60px">
-        <a type="submit" class="action-accept-btn waves-effect waves-light btn onclick='' confirm-time-btn btn-small button-spacing">Confirm Order</a>
+
+        <button class ="cheffConfirmOrder waves-effect waves-light button-spacing btn" type="submit" value="submit">Confirm Order</button>
+
          <a class="action-decline-btn waves-effect waves-light btn button-spacing">Decline Order</a>
-      <a class="action-complete-btn waves-effect waves-light btn button-spacing">Order Completed</a>
+
+        <a class="action-complete-btn waves-effect waves-light btn button-spacing">Order Completed</a>
 
       </form>
         </div>
