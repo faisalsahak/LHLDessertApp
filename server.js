@@ -1,7 +1,7 @@
 const express = require("express");
 const PORT = process.env.PORT || 8080;
 const app = express();
-const sass          = require("node-sass-middleware");
+// const sass          = require("node-sass-middleware");
 const bodyParser    = require("body-parser");
 const confirmOrders = require("./routes/confirm-orders");
 const renderOrder   = require("./routes/render-orders");
@@ -12,12 +12,12 @@ const renderOrder   = require("./routes/render-orders");
 // const jsFile        = require('./public/scripts/app');
 
 // Middleware //
-app.use(sass({
-  src: __dirname + "/sass",
-  dest: __dirname + "/public/stylesheets",
-  debug: true,
-  outputStyle: 'expanded'
-}));
+// app.use(sass({
+//   src: __dirname + "/sass",
+//   dest: __dirname + "/public/stylesheets",
+//   debug: true,
+//   outputStyle: 'expanded'
+// }));
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -1,5 +1,5 @@
 <% include ./partials/_head %>
-
+<main>
 <body>
 
 <% include ./partials/_header %>
@@ -14,24 +14,23 @@
   <container>
     <div class="row">
       <div class="col s2"></div>
-      <div class="col s6">
+      <div class="col s7">
 
       <ul class="collapsible" data-collapsible="accordion">
         <li class="food-item " data-food-item-id="1">
           <div class="collapsible-header food-item food-item-1" data-food-item-id="1">
-            <i class="material-icons">filter_drama</i>Cheesecake
+            <i class="material-icons">donut_small</i>Cheesecake
           </div>
 
           <div class="collapsible-body description">
             <h3 class="title">Cheesecake</h3>
-            <img src="../images/cheesecake.jpeg"  height= "130px", width = "130px"  />
+            <img src="../images/cheesecake.jpeg" height= "130px", width = "130px"  />
             <p class="description">This cheesecake is super creamy, lightly sweet, and has the most wonderful flavor and smell. It's a showstopper of a dessert. Try this if you're looking to taste floral flavors.</p>
               <div class="row">
                 <a class="subtract-quantity waves-effect waves-light btn">-</a>
                   <span class="counter counter-food-item-1"></span>
                   <a class="add-quantity waves-effect waves-light btn">+</a>
                   <button class="btn waves-effect waves-light add-to-cart" type="submit" name="action">Add to Cart
-                    <i class="material-icons right">send</i>
                   </button>
               </div>
           </div>
@@ -40,7 +39,7 @@
 
         <li class="food-item " data-food-item-id="2">
             <div class="collapsible-header food-item food-item-2" data-food-item-id="2">
-              <i class="material-icons">filter_drama</i>Chocolate Cake
+              <i class="material-icons">cake</i>Chocolate Cake
             </div>
 
             <div class="collapsible-body description">
@@ -52,7 +51,6 @@
                     <span class="counter counter-food-item-2"></span>
                     <a class="add-quantity waves-effect waves-light btn">+</a>
                     <button class="btn waves-effect waves-light add-to-cart" type="submit" name="action">Add to Cart
-                      <i class="material-icons right">send</i>
                     </button>
                 </div>
             </div>
@@ -60,7 +58,7 @@
 
           <li class="food-item " data-food-item-id="3">
             <div class="collapsible-header food-item food-item-3" data-food-item-id="3">
-              <i class="material-icons">filter_drama</i>Chocolate Chip Cookie
+              <i class="material-icons">blur_circular</i>Chocolate Chip Cookie
             </div>
 
             <div class="collapsible-body description">
@@ -72,7 +70,6 @@
                     <span class="counter counter-food-item-3"></span>
                     <a class="add-quantity waves-effect waves-light btn">+</a>
                     <button class="btn waves-effect waves-light add-to-cart" type="submit" name="action">Add to Cart
-                      <i class="material-icons right">send</i>
                     </button>
                 </div>
             </div>
@@ -80,19 +77,18 @@
 
           <li class="food-item " data-food-item-id="4">
             <div class="collapsible-header food-item food-item-4" data-food-item-id="4">
-              <i class="material-icons">filter_drama</i>Apple Pie
+              <i class="material-icons">pie_chart</i>Apple Pie
             </div>
 
             <div class="collapsible-body description">
               <h3 class="title">Apple Pie</h3>
               <img src="../images/applePie.jpg"  height= "130px", width = "130px" />
-              <p class="description">All organic.</p>
-                <div class="row">
+              <p class="description-apple">All organic.</p>
+                <div class="row-apple">
                   <a class="subtract-quantity waves-effect waves-light btn">-</a>
                     <span class="counter counter-food-item-4"></span>
                     <a class="add-quantity waves-effect waves-light btn">+</a>
                     <button class="btn waves-effect waves-light add-to-cart" type="submit" name="action">Add to Cart
-                      <i class="material-icons right">send</i>
                     </button>
                 </div>
             </div>
@@ -100,7 +96,7 @@
 
           <li class="food-item " data-food-item-id="5">
             <div class="collapsible-header food-item food-item-5" data-food-item-id="5">
-              <i class="material-icons">filter_drama</i>Tiramisu
+              <i class="material-icons">insert_emoticon</i>Tiramisu
             </div>
 
             <div class="collapsible-body description">
@@ -112,7 +108,6 @@
                     <span class="counter counter-food-item-5"></span>
                     <a class="add-quantity waves-effect waves-light btn">+</a>
                     <button class="btn waves-effect waves-light add-to-cart" type="submit" name="action">Add to Cart
-                      <i class="material-icons right">send</i>
                     </button>
                 </div>
             </div>
@@ -121,23 +116,20 @@
         </ul>
     </div>
 
-      <div>
 
-        <div class="col s4 cart">
+
+        <div class="col s3 cart">
           <h2>Cart</h2>
           <p class="empty-cart-message">It looks like your cart is empty.</p>
           <section class="cart-items">
           </section>
-        </div>
-
 
           <form action="/sendOrder" method="Post">
             <button href="#modal1" style="display:none" class="btn waves-effect waves-light place-order" type="submit" name="sendOrder">Send Order
             <i class="material-icons right">send</i>
             </button>
           </form>
-
-
+        </div>
          <!-- Modal Trigger -->
        <!--    <a class="waves-effect waves-light btn" href="#modal1">Modal</a> -->
 
@@ -160,7 +152,10 @@
   </container>
 </section>
 
-<% include ./partials/_footer %>
+
 
 </body>
+</main>
+
+<% include ./partials/_footer %>
 </html>
