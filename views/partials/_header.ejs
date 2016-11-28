@@ -1,11 +1,26 @@
 <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <div class="nav-wrapper container">
+      <span onclick="openNav()" class="pull-right menu-icon"><a href="#">Menu</a></span>
+      <span class="pull-right menu-icon"><a href="/">Home</a></span>
+      <span class="pull-right menu-icon"><a href="#">About</a></span>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+        <li>    <header id="header">
+                <div class="container">
+                    <div id="mySidenav" class="sidenav">
+                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                      <a href="/menu">Menu</a>
+                      <a href="/">Home</a>
+                      <a href="#">About</a>
+                    </div>
+
+
+
+                </div>
+            </header></li>
       </ul>
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#">Navbar Link</a></li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+
     </div>
   </nav>

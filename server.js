@@ -80,12 +80,13 @@ app.post("/confirm-order", (req, res) => {
     if (err) {
       console.log(err);
       res.status(500).send("TWILIO IS FUCKED");
-    } else {
-      // console.log(data)
-      res.send();
     }
+    // else {
+    //   // console.log(data)
+    //
+    // }
   });
-
+   res.redirect('/restaurant');
 });
 
 

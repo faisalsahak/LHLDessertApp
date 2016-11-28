@@ -100,9 +100,6 @@ $(document).ready(function() {
       $('.cart-items').empty();
       $('.place-order').hide();
 
-
-
-
   });
 
 
@@ -149,10 +146,23 @@ $(document).ready(function() {
   })
 
   //restaurant-side actions
-  $(".action-accept-btn").on("click", function(event) {
-    event.preventDefault();
-    console.log("accepted!");
-  });
+  // $(".action-accept-btn").on("click", function(event) {
+  //   event.preventDefault();
+  //
+  //   $.ajax ({
+  //     method: 'post',
+  //     url: '/confirm-order',
+  //     success: function(){
+  //       console.log("accepted!");
+  //     }
+  //   })
+  //
+  // });
+// });
+// 
+// $('#cheffConfirmOrder').on('click', function(){
+//   $('#timeBox').val();
+// })
 
   $(".action-complete-btn").on("click", function(event) {
     $(".order-box").empty("");
